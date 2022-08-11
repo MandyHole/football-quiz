@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Knowledge Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css">
-<!-- realfavicongenerator.net -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <!-- realfavicongenerator.net -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-    
 
+<body>
+    <header>
+        <h1><img src="assets/images/football.png" alt="A drawn picture of a football">Football Knowledge Quiz</h1>
+        <div>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <div>
+            <p>Attempts: <span id="attempts">0</span></p>
+        </div>
+        <div>
+            <p>League: <span id="league">Grassroots</span></p>
+        </div>
+    </header>
+    <section id="question-grid-area">
+        <div id="question-box">
+            <h2 id="question">Question 1</h2>
+            <form>
+                <span id="question-options">
+                    <p>Option 1<br>
+                        Option 2<br>
+                        Option 3<br>
+                        Option 4</span></p>
+                <button type="submit" id="submit-answer">Submit</button>
+            </form>
+        </div>
+        <div id="score-gif"></div>
+        <div id="miss-gif"></div>
+    </section>
+<footer>
+    <h2>Rules of the Game:</h2>
+    <p>You will be asked 10 questions testing your football general knowledge. For every two correct answers, you advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to the Champions League?</p>
+</footer>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
