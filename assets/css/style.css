@@ -12,6 +12,16 @@ body {
     margin: 0;
 }
 
+button {
+    background-color: #1a5929;
+    border: 2px solid black;
+    color: white;
+    border-radius: 5%;
+    padding: .2% 3%;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
 /* header */
 header {
     width: 100%;
@@ -100,7 +110,7 @@ li {
 #question-grid-area {
     display: grid;
     width: 80%;
-    margin: 0 auto;
+    margin: 20px auto;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
     grid-template-areas:
@@ -114,7 +124,7 @@ li {
 }
 
 #question-box>h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #1a5929;
     text-align: left;
@@ -145,7 +155,27 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1%;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
+}
+
+/* media queries */
+@media screen and (max-width: 700px) {
+    #tally-grid {
+        grid-template-areas:
+            "score-area attempts-area"
+            "league-area league-area";
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    #question-grid-area {
+        grid-template-areas:
+            "question-box"
+            "score-gif"
+            "miss-gif";
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: .5rem 0;
+    }
 }
