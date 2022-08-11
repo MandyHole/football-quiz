@@ -1,9 +1,7 @@
 /* Google fonts */
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap');
-</style>
+<style>@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap');
 
-* {
+</style>* {
     padding: 0;
     margin: 0;
     border: none;
@@ -17,21 +15,29 @@ body {
 /* header */
 header {
     width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
 }
 
-header > img {
+header>img {
     width: 60%;
     margin: 1rem 20%;
 }
-header > h1 {
+
+header>h1 {
     display: none;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
 }
-#tally-grid{
+
+#tally-grid {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -41,43 +47,47 @@ h1, h2, p {
     align-items: stretch;
     background-color: #1a5929;
 }
+
 .tally-text {
     color: white;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     font-size: 1.5rem;
 }
-#score-area{
+
+#score-area {
     grid-area: score-area;
 }
-#attempts-area{
+
+#attempts-area {
     grid-area: attempts-area;
 }
-#league-area{
+
+#league-area {
     grid-area: league-area;
 }
 
-footer {
+#rules {
     background-color: black;
     width: 100%;
     padding: 1%;
-    margin-top: 2rem;
-    position: absolute;
-    bottom: 0;
+    margin-top: 10px;
+    position: relative;
 }
-footer > h2 {
+
+#rules>h2 {
     color: white;
     font-size: 2rem;
     text-align: center;
     margin-block-start: 0.2em;
     margin-block-end: 0;
 }
-footer > p {
+
+#rules>p {
     color: white;
     font-size: 1.2rem;
     text-align: center;
     padding: 0 20%;
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
-
 }
