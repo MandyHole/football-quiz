@@ -99,8 +99,8 @@ li {
 
 #question-grid-area {
     display: grid;
-    width: 100%;
-    margin: 30px 100px;
+    width: 80%;
+    margin: 0 auto;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
     grid-template-areas:
@@ -137,5 +137,15 @@ li {
 }
 
 #miss-gif>img {
+    width: 100%;
+}
+
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    position: fixed;
+    bottom: 0;
     width: 100%;
 }
