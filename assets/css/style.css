@@ -1,3 +1,60 @@
+/* Google fonts */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap');
+</style>
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: blue;
+    margin: 0;
+}
+
+/* header */
+header {
+    width: 100%;
+}
+
+header > img {
+    width: 60%;
+    margin: 1rem 20%;
+}
+/* 
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: xx-large;
+    padding: 2rem;
+    color: #1a5929;
+} */
+#tally-grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    grid-template-areas:
+        "score-area attempts-area league-area";
+    align-items: stretch;
+    background-color: #1a5929;
+}
+.tally-text {
+    color: white;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+}
+#score-area{
+    grid-area: score-area;
+}
+#attempts-area{
+    grid-area: attempts-area;
+}
+#league-area{
+    grid-area: league-area;
 }
