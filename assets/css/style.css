@@ -145,9 +145,7 @@ li {
     width: 100%;
     display: block;
 }
-
-.miss-feedback {
-    background-color: #B30000;
+.feedback {
     border: 2px solid black;
     color: #fff;
     font-size: larger;
@@ -155,6 +153,15 @@ li {
     margin-bottom: 1rem;
     padding: 5%
 }
+
+.miss-feedback {
+    background-color: #B30000;
+}
+
+.correct-feedback {
+    background-color: #1a5929;
+}
+
 /* footer */
 
 footer {
