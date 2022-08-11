@@ -32,11 +32,13 @@ header>h1 {
 
 h1,
 h2,
-p {
+p,
+li {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
 }
 
+/* Tally grid */
 #tally-grid {
     display: grid;
     width: 100%;
@@ -67,6 +69,7 @@ p {
     grid-area: league-area;
 }
 
+/* Rules section */
 #rules {
     background-color: black;
     width: 100%;
@@ -90,4 +93,49 @@ p {
     padding: 0 20%;
     margin-block-start: 0.4em;
     margin-block-end: 0.4em;
+}
+
+/* Questions grid section */
+
+#question-grid-area {
+    display: grid;
+    width: 100%;
+    margin: 30px 100px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    grid-template-areas:
+        "question-box question-box score-gif"
+        "question-box question-box miss-gif";
+    align-items: stretch;
+}
+
+#question-box {
+    grid-area: question-box;
+}
+
+#question-box>h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a5929;
+    text-align: left;
+}
+
+#question-box p,
+#question-box li {
+    font-size: 1.5rem;
+    color: black;
+    text-align: left;
+}
+
+#score-gif {
+    grid-area: score-gif;
+    display: none;
+}
+
+#miss-gif {
+    grid-area: miss-gif;
+}
+
+#miss-gif>img {
+    width: 100%;
 }
