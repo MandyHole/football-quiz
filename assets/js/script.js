@@ -514,16 +514,18 @@ const footballQuestions = [{
 ]
 
 document.addEventListener("DOMContentLoaded", function () {
-runGame();
-let buttons = document.getElementsByTagName("button");
-for (let button of buttons) {
-    button.addEventListener("click", function() {
-        if (this.getAttribute("data-type") === "submit") {
-            calculateAnswer();
-        } else {
-            runGame();
-        }
-})}});
+    runGame();
+    let buttons = document.getElementsByTagName("button");
+    for (let button of buttons) {
+        button.addEventListener("click", function () {
+            if (this.getAttribute("data-type") === "submit") {
+                calculateAnswer();
+            } else {
+                runGame();
+            }
+        })
+    }
+});
 
 
 /**
@@ -534,6 +536,19 @@ function runGame() {
     let attempts = parseInt(document.getElementById("attempts").innerText)
     if (attempts < 10) {
         console.log(footballQuestions[0].correct)
+        document.getElementById("feedback-gif").style.display = "none";
+        document.getElementById("question").textContent = "This is the first question"
+        document.getElementById("question-options").innerHTML =
+          `<form>
+            <p><input type="radio" id="q1a" name="q1" value="q1answer">
+            <label for "q1a">q1answer</label><br>
+            <input type="radio"" id="q1b" name="q1" value="q1answer2"> 
+            <label for "q1b">q1answer2</label><br>
+            <input type="radio" id="q1c" name="q1" value="q1answer3">
+            <label for "q1c" class="correct">q1answer3</label><br>
+            <input type="radio" id="q1d" name="q1" value="q1answer4">
+            <label for "q1d">q1answer4</label><br></p>
+        <p><button data-type="submit" id="submit-answer">Submit</button></p></form>`
         // add game code here;
     } else if (attempts === 10) {
         endGame();
@@ -541,7 +556,7 @@ function runGame() {
         alert(`You have had too many attempts (more than 10): ${attempts}`);
         playAgain();
     }
-  console.log(footballQuestions[0].scoreGif)
+    console.log(footballQuestions[0].scoreGif)
 }
 
 /**
@@ -551,48 +566,51 @@ function runGame() {
  * all - remove options and submit button
  * show next question button
  */
-function calculateAnswer(){
-  console.log("calc answer")}
+function calculateAnswer() {
+    console.log("calc answer")
+}
 /**
  * add one to score
  */
-function addScore(){
-  let score = parseInt(document.getElementById("score").innerText);
-  document.getElementById("score").innerText = ++score;
+function addScore() {
+    let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++score;
 }
 /**
  * add one to attempts
  */
-function addAttempt(){
+function addAttempt() {
     let attempts = parseInt(document.getElementById("attempts").innerText);
-    document.getElementById("attempts").innerText = ++attempts;}
+    document.getElementById("attempts").innerText = ++attempts;
+}
 /**
  * Advance league each time the score increases by two
  */
-function calculateLeague(){
+function calculateLeague() {
     let league = document.getElementById("league").innerText;
     let score = parseInt(document.getElementById("score").innerText);
-    if (score === 2 || score === 3){
+    if (score === 2 || score === 3) {
         document.getElementById("league").innerText = "League 2";
-    } else if (score === 4 || score === 5){
+    } else if (score === 4 || score === 5) {
         document.getElementById("league").innerText = "League 1";
-    } else if (score === 6 || score === 7){
+    } else if (score === 6 || score === 7) {
         document.getElementById("league").innerText = "Championship";
-    } else if (score === 8 || score === 9){
+    } else if (score === 8 || score === 9) {
         document.getElementById("league").innerText = "Premier League";
-    } else if (score === 10){
+    } else if (score === 10) {
         document.getElementById("league").innerText = "Champions League";
     } else {
         document.getElementById("league").innerText = "Grassroots";
     }
-  console.log("calculate league")}
+    console.log("calculate league")
+}
 
 /**Remove questions/gifs
  * Add feedback message based on score
  * Add button to play again
  */
 function endGame() {
-  console.log(footballQuestions[49])
+    console.log(footballQuestions[49])
 }
 /**
  * Reset score/attempts to 0 and league to grassroots
