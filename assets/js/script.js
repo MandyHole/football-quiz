@@ -554,7 +554,8 @@ function addScore(){
  * add one to attempts
  */
 function addAttempt(){
-  console.log("add attempts")}
+    let attempts = parseInt(document.getElementById("attempts").innerText);
+    document.getElementById("attempts").innerText = ++attempts;}
 /**
  * Advance league each time the score increases by two
  */
