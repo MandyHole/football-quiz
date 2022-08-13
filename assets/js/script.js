@@ -520,6 +520,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
             if (this.getAttribute("data-type") === "submit") {
                 calculateAnswer();
+                addAttempt();
             } else {
                 runGame();
             }
@@ -533,31 +534,28 @@ document.addEventListener("DOMContentLoaded", function () {
  * set "feedback-gif" to none
  */
 function runGame() {
-    let attempts = parseInt(document.getElementById("attempts").innerText)
+    let attempts = parseInt(document.getElementById("attempts").textContent);
     if (attempts < 10) {
-        console.log(footballQuestions[0].correct)
         document.getElementById("feedback-gif").style.display = "none";
-        document.getElementById("question").textContent = "This is the first question"
+        document.getElementById("question").textContent = "This is the first question";
         document.getElementById("question-options").innerHTML =
-          `<form>
-            <p><input type="radio" id="q1a" name="q1" value="q1answer">
-            <label for "q1a">q1answer</label><br>
-            <input type="radio"" id="q1b" name="q1" value="q1answer2"> 
-            <label for "q1b">q1answer2</label><br>
-            <input type="radio" id="q1c" name="q1" value="q1answer3">
-            <label for "q1c" class="correct">q1answer3</label><br>
-            <input type="radio" id="q1d" name="q1" value="q1answer4">
-            <label for "q1d">q1answer4</label><br></p>
-        <p><button data-type="submit" id="submit-answer">Submit</button></p></form>`
-        // add game code here;
+            `<form>
+                <p><input type="radio" id="q1a" name="q1" value="q1answer">
+                <label for "q1a">q1answer</label><br>
+                <input type="radio"" id="q1b" name="q1" value="q1answer2"> 
+                <label for "q1b">q1answer2</label><br>
+                <input type="radio" id="q1c" name="q1" value="q1answer3">
+                <label for "q1c" class="correct">q1answer3</label><br>
+                <input type="radio" id="q1d" name="q1" value="q1answer4">
+                <label for "q1d">q1answer4</label><br></p>
+            <p><button data-type="submit" id="submit-answer">Submit</button></p></form>`;
     } else if (attempts === 10) {
         endGame();
     } else {
         alert(`You have had too many attempts (more than 10): ${attempts}`);
         playAgain();
-    }
-    console.log(footballQuestions[0].scoreGif)
-}
+        throw `Too many attempts: ${attempts}`;
+    };}
 
 /**
  * see if radio value === correct answer
@@ -567,7 +565,16 @@ function runGame() {
  * show next question button
  */
 function calculateAnswer() {
+    console.log("calculate")
+    console.log(document.querySelector('input[name="q1"]:checked').value);
+    if (document.querySelector('input[name="q1"]:checked').value === "q1answer"){
+        addScore();
+    }
     console.log("calc answer")
+    document.getElementById("feedback-gif").style.display = "grid";
+    // add innerhtml for feedback-gif box
+    document.getElementById("question-options").innerHTML =
+        `<button>Go to Next Question</button>`
 }
 /**
  * add one to score
@@ -575,6 +582,7 @@ function calculateAnswer() {
 function addScore() {
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
+
 }
 /**
  * add one to attempts
@@ -621,5 +629,5 @@ function playAgain() {
     document.getElementById("score").innerText = 0;
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
-    // need to add random question
+    console.log("playAgain");
 }
