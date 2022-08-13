@@ -534,6 +534,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * set "feedback-gif" to none
  */
 function runGame() {
+    calculateLeague()
     let attempts = parseInt(document.getElementById("attempts").textContent);
     if (attempts < 10) {
         document.getElementById("feedback-gif").style.display = "none";
@@ -566,6 +567,7 @@ function runGame() {
  */
 function calculateAnswer() {
     console.log("calculate")
+    // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     console.log(document.querySelector('input[name="q1"]:checked').value);
     if (document.querySelector('input[name="q1"]:checked').value === "q1answer"){
         addScore();
@@ -582,7 +584,6 @@ function calculateAnswer() {
 function addScore() {
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++score;
-
 }
 /**
  * add one to attempts
@@ -595,7 +596,6 @@ function addAttempt() {
  * Advance league each time the score increases by two
  */
 function calculateLeague() {
-    let league = document.getElementById("league").innerText;
     let score = parseInt(document.getElementById("score").innerText);
     if (score === 2 || score === 3) {
         document.getElementById("league").innerText = "League 2";
