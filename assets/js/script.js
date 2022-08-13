@@ -513,54 +513,65 @@ const footballQuestions = [{
     },
 ]
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
     let attempts = parseInt(document.getElementById("attempts").innerText)
-    if (attempts<10) {
-    runGame();
-}
-else if (attempts===10){
-    endGame();
-}
-else {
-    alert(`Attempts not allowed: ${attempts}`);
-throw `Unknown number of attempts: ${attempts}. Aborting!`;}})
+    if (attempts < 10) {
+        runGame();
+    } else if (attempts === 10) {
+        endGame();
+    } else {
+        alert(`You have had too many attempts (more than 10): ${attempts}`);
+        playAgain();
+    }
+})
 
 
 /**
  * Insert random question / submit button
  * set "feedback-gif" to none
  */
- function runGame(){
-    console.log(footballQuestions[0])
+function runGame() {
+  console.log(footballQuestions[0].correct)
 }
 
-function calculateAnswer()
-
+/**
+ * see if radio value === correct answer
+ * if yes, show correct message and score gif
+ * if no, show wrong message and miss gif
+ * all - remove options and submit button
+ * show next question button
+ */
+function calculateAnswer(){
+  console.log("calc answer")}
 /**
  * add one to score
  */
-function addScore ()
-
+function addScore(){
+  let score = parseInt(document.getElementById("score").innerText);
+  document.getElementById("score").innerText = ++score;
+}
 /**
  * add one to attempts
  */
-function addAttempt()
-
+function addAttempt(){
+  console.log("add attempts")}
 /**
  * Advance league each time the score increases by two
  */
-function calculateLeague()
-
+function calculateLeague(){
+  console.log("calculate league")}
 
 /**Remove questions/gifs
  * Add feedback message based on score
  * Add button to play again
  */
-function endGame(){
-    console.log(footballQuestions[49])
+function endGame() {
+  console.log(footballQuestions[49])
 }
 /**
  * Reset score/attempts to 0 and league to grassroots
  * insert random question?
  */
-function playAgain()
+function playAgain() {
+  console.log(playAgain)
+}
