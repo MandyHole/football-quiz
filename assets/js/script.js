@@ -512,21 +512,30 @@ const footballQuestions = [{
         missGif: "miss10.gif",
     },
 ]
+let questionID = Math.floor(Math.random()*50)+1
 
 document.addEventListener("DOMContentLoaded", function () {
     runGame();
     let buttons = document.getElementsByTagName("button");
+    let nextQuestion = document.getElementById("next-question-p");
     for (let button of buttons) {
         button.addEventListener("click", function () {
-            if (this.getAttribute("data-type") === "submit") {
+            if (this.getAttribute("id") === "submit-answer") {
+                console.log("I clicked submit");
                 calculateAnswer();
-                addAttempt();
-            } else {
+                addAttempt();}
+                
+            if (nextQuestion.addEventListener("click", function(){
+                handleSubmit();
                 runGame();
+                console.log("I clicked next question");
+                (this.getAttribute("id") === "next-question")
+                // let questionButton = document.getElementById('next-question');
+                // questionButton.addEventListener('submit', handleSubmit);
+                // runGame();
+                // console.log("I clicked next question")
             }
-        })
-    }
-});
+        ));})}})
 
 
 /**
@@ -549,7 +558,8 @@ function runGame() {
                 <label for "q1c" class="correct">q1answer3</label><br>
                 <input type="radio" id="q1d" name="q1" value="q1answer4">
                 <label for "q1d">q1answer4</label><br></p>
-            <p><button data-type="submit" id="submit-answer">Submit</button></p></form>`;
+            <p><button type="submit" id="submit-answer">Submit</button></p>
+            </form>`;
     } else if (attempts === 10) {
         endGame();
     } else {
@@ -576,7 +586,7 @@ function calculateAnswer() {
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
     document.getElementById("question-options").innerHTML =
-        `<button>Go to Next Question</button>`
+        `<form><button type="submit" id="next-question-p">Go to Next Question</form>`
 }
 /**
  * add one to score
@@ -630,4 +640,7 @@ function playAgain() {
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
     console.log("playAgain");
+}
+function handleSubmit(event){
+    event.preventDefault();
 }
