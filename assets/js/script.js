@@ -514,16 +514,16 @@ const footballQuestions = [{
 ]
 
 document.addEventListener("DOMContentLoaded", function () {
-    let attempts = parseInt(document.getElementById("attempts").innerText)
-    if (attempts < 10) {
-        runGame();
-    } else if (attempts === 10) {
-        endGame();
-    } else {
-        alert(`You have had too many attempts (more than 10): ${attempts}`);
-        playAgain();
-    }
-})
+runGame();
+let buttons = document.getElementsByTagName("button");
+for (let button of buttons) {
+    button.addEventListener("click", function() {
+        if (this.getAttribute("data-type") === "submit") {
+            calculateAnswer();
+        } else {
+            runGame();
+        }
+})}});
 
 
 /**
@@ -531,7 +531,17 @@ document.addEventListener("DOMContentLoaded", function () {
  * set "feedback-gif" to none
  */
 function runGame() {
-  console.log(footballQuestions[0].correct)
+    let attempts = parseInt(document.getElementById("attempts").innerText)
+    if (attempts < 10) {
+        console.log(footballQuestions[0].correct)
+        // add game code here;
+    } else if (attempts === 10) {
+        endGame();
+    } else {
+        alert(`You have had too many attempts (more than 10): ${attempts}`);
+        playAgain();
+    }
+  console.log(footballQuestions[0].scoreGif)
 }
 
 /**
@@ -593,8 +603,5 @@ function playAgain() {
     document.getElementById("score").innerText = 0;
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
-
-
-
-  console.log(playAgain)
+    // need to add random question
 }
