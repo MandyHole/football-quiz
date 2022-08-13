@@ -560,6 +560,21 @@ function addAttempt(){
  * Advance league each time the score increases by two
  */
 function calculateLeague(){
+    let league = document.getElementById("league").innerText;
+    let score = parseInt(document.getElementById("score").innerText);
+    if (score === 2 || score === 3){
+        document.getElementById("league").innerText = "League 2";
+    } else if (score === 4 || score === 5){
+        document.getElementById("league").innerText = "League 1";
+    } else if (score === 6 || score === 7){
+        document.getElementById("league").innerText = "Championship";
+    } else if (score === 8 || score === 9){
+        document.getElementById("league").innerText = "Premier League";
+    } else if (score === 10){
+        document.getElementById("league").innerText = "Champions League";
+    } else {
+        document.getElementById("league").innerText = "Grassroots";
+    }
   console.log("calculate league")}
 
 /**Remove questions/gifs
