@@ -589,5 +589,12 @@ function endGame() {
  * insert random question?
  */
 function playAgain() {
+    document.getElementById("attempts").innerText = 0;
+    document.getElementById("score").innerText = 0;
+    document.getElementById("league").innerText = "Grassroots";
+    document.getElementById("feedback-gif").style.display = "none";
+
+
+
   console.log(playAgain)
 }
