@@ -512,3 +512,55 @@ const footballQuestions = [{
         missGif: "miss10.gif",
     },
 ]
+
+document.addEventListener("DOMContentLoaded", function(){
+    let attempts = parseInt(document.getElementById("attempts").innerText)
+    if (attempts<10) {
+    runGame();
+}
+else if (attempts===10){
+    endGame();
+}
+else {
+    alert(`Attempts not allowed: ${attempts}`);
+throw `Unknown number of attempts: ${attempts}. Aborting!`;}})
+
+
+/**
+ * Insert random question / submit button
+ * set "feedback-gif" to none
+ */
+ function runGame(){
+    console.log(footballQuestions[0])
+}
+
+function calculateAnswer()
+
+/**
+ * add one to score
+ */
+function addScore ()
+
+/**
+ * add one to attempts
+ */
+function addAttempt()
+
+/**
+ * Advance league each time the score increases by two
+ */
+function calculateLeague()
+
+
+/**Remove questions/gifs
+ * Add feedback message based on score
+ * Add button to play again
+ */
+function endGame(){
+    console.log(footballQuestions[49])
+}
+/**
+ * Reset score/attempts to 0 and league to grassroots
+ * insert random question?
+ */
+function playAgain()
