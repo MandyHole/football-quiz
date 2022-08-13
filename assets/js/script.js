@@ -512,31 +512,31 @@ const footballQuestions = [{
         missGif: "miss10.gif",
     },
 ]
-let questionID = Math.floor(Math.random()*50)+1
 
 document.addEventListener("DOMContentLoaded", function () {
-    runGame();
-    let buttons = document.getElementsByTagName("button");
-    let nextQuestion = document.getElementById("next-question-p");
-    for (let button of buttons) {
-        button.addEventListener("click", function () {
-            if (this.getAttribute("id") === "submit-answer") {
-                console.log("I clicked submit");
-                calculateAnswer();
-                addAttempt();}
-                
-            if (nextQuestion.addEventListener("click", function(){
-                handleSubmit();
-                runGame();
-                console.log("I clicked next question");
-                (this.getAttribute("id") === "next-question")
+    runGame();})
+    // let buttons = document.getElementsByTagName("button");
+    // for (let button of buttons) {
+    //     button.addEventListener("click", function () {
+    //         if (this.getAttribute("id") === "submit-answer") {
+    //             console.log("I clicked submit");
+    //             calculateAnswer();
+    //             addAttempt();
+    //         } else if (this.getAttribute("id") === "next-question-p") {
+    //             handleSubmit(); runGame(); console.log("I clicked next question");
                 // let questionButton = document.getElementById('next-question');
                 // questionButton.addEventListener('submit', handleSubmit);
                 // runGame();
                 // console.log("I clicked next question")
-            }
-        ));})}})
-
+//             }}
+//         );
+//     }
+// }
+// );
+function submitAnswer() {
+    calculateAnswer();
+    addAttempt();
+}
 
 /**
  * Insert random question / submit button
@@ -545,9 +545,11 @@ document.addEventListener("DOMContentLoaded", function () {
 function runGame() {
     calculateLeague()
     let attempts = parseInt(document.getElementById("attempts").textContent);
+    let questionID = Math.floor(Math.random() * 50)
+    console.log(console.log(footballQuestions[questionID]))
     if (attempts < 10) {
         document.getElementById("feedback-gif").style.display = "none";
-        document.getElementById("question").textContent = "This is the first question";
+        document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
             `<form>
                 <p><input type="radio" id="q1a" name="q1" value="q1answer">
@@ -558,7 +560,7 @@ function runGame() {
                 <label for "q1c" class="correct">q1answer3</label><br>
                 <input type="radio" id="q1d" name="q1" value="q1answer4">
                 <label for "q1d">q1answer4</label><br></p>
-            <p><button type="submit" id="submit-answer">Submit</button></p>
+            <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
             </form>`;
     } else if (attempts === 10) {
         endGame();
@@ -566,7 +568,8 @@ function runGame() {
         alert(`You have had too many attempts (more than 10): ${attempts}`);
         playAgain();
         throw `Too many attempts: ${attempts}`;
-    };}
+    };
+}
 
 /**
  * see if radio value === correct answer
@@ -579,14 +582,14 @@ function calculateAnswer() {
     console.log("calculate")
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     console.log(document.querySelector('input[name="q1"]:checked').value);
-    if (document.querySelector('input[name="q1"]:checked').value === "q1answer"){
+    if (document.querySelector('input[name="q1"]:checked').value === "q1answer") {
         addScore();
     }
     console.log("calc answer")
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
     document.getElementById("question-options").innerHTML =
-        `<form><button type="submit" id="next-question-p">Go to Next Question</form>`
+        `<form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
 }
 /**
  * add one to score
@@ -629,6 +632,11 @@ function calculateLeague() {
  */
 function endGame() {
     console.log(footballQuestions[49])
+    let score = parseInt(document.getElementById("score").innerText);
+    if (score <= 3){
+    document.getElementById("question-options").innerHTML = 
+    `It looks like you need a bit more practice! Why not play again to see if you can advance further?`
+}
 }
 /**
  * Reset score/attempts to 0 and league to grassroots
@@ -639,8 +647,11 @@ function playAgain() {
     document.getElementById("score").innerText = 0;
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
+    runGame()
     console.log("playAgain");
+    // location.reload();
 }
-function handleSubmit(event){
+
+function handleSubmit(event) {
     event.preventDefault();
 }
