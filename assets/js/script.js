@@ -521,6 +521,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function submitAnswer() {
     calculateAnswer();
     addAttempt();
+    runGame();
 }
 
 /**
@@ -531,9 +532,9 @@ function runGame() {
     calculateLeague()
     let attempts = parseInt(document.getElementById("attempts").textContent);
     let questionID = Math.floor(Math.random() * 50)
-    if (attempts < 2) {
+    if (attempts < 10) {
         document.getElementById("feedback-gif").style.display = "none";
-        document.getElementById("final-message").style.display = "none";
+        // document.getElementById("final-message").style.display = "none";
         document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
             `<form>
@@ -547,10 +548,12 @@ function runGame() {
                 <label for "q1d">q1answer4</label><br></p>
             <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
             </form>`;
-    } else if (attempts == 2) {
+    } else if (attempts < 11) {
         endGame();
     } else {
-        alert(`You have had too many attempts (more than 10): ${attempts}`);
+        document.getElementById("final-message").style.display = "block";
+        document.getElementById("final-message").innerHTML =
+        `You have had too many attempts (more than 10): ${attempts}`;
         playAgain();
         throw `Too many attempts: ${attempts}`;
     };
