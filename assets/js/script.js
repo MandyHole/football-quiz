@@ -517,11 +517,22 @@ const footballQuestions = [{
 document.addEventListener("DOMContentLoaded", function () {
     runGame();})
 
-/** Run functions Calculate Answer and addAttempt when user clicks submit */    
+/** Activated when user clicks submit
+ * Calculate answer and league. Add 1 to attempts
+ * End game if attempts = 10*/    
 function submitAnswer() {
     calculateAnswer();
+    calculateLeague()
     addAttempt();
-    runGame();
+    let attempts = parseInt(document.getElementById("attempts").textContent);
+    if (attempts == 10) {
+        endGame()
+    } else if (attempts > 10){
+        document.getElementById("final-message").style.display = "block";
+        document.getElementById("final-message").innerHTML =
+        `You have had too many attempts (more than 10): ${attempts}. <form><button onclick="playAgain()">Play Again</button></form>`;
+        throw `Too many attempts: ${attempts}`;
+    };
 }
 
 /**
@@ -529,12 +540,9 @@ function submitAnswer() {
  * set "feedback-gif" to none
  */
 function runGame() {
-    calculateLeague()
-    let attempts = parseInt(document.getElementById("attempts").textContent);
     let questionID = Math.floor(Math.random() * 50)
-    if (attempts < 10) {
         document.getElementById("feedback-gif").style.display = "none";
-        // document.getElementById("final-message").style.display = "none";
+        document.getElementById("final-message").style.display = "none";
         document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
             `<form>
@@ -548,15 +556,6 @@ function runGame() {
                 <label for "q1d">q1answer4</label><br></p>
             <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
             </form>`;
-    } else if (attempts < 11) {
-        endGame();
-    } else {
-        document.getElementById("final-message").style.display = "block";
-        document.getElementById("final-message").innerHTML =
-        `You have had too many attempts (more than 10): ${attempts}`;
-        playAgain();
-        throw `Too many attempts: ${attempts}`;
-    };
 }
 
 /**
