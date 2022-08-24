@@ -633,7 +633,7 @@ function endGame() {
     `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times. You are so close to the Champions League. Why not try again to see if you can make it to the top?`
 } else if (score < 11) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message poor">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
+    `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
 } else {
     alert(`Game over due to suspected cheating. Your score can't be more than 10: ${score}`);
     playAgain();
