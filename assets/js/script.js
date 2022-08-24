@@ -567,11 +567,15 @@ function calculateAnswer() {
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     if (document.querySelector('input[name="q1"]:checked').value === "q1answer") {
         addScore();
+        document.getElementById("question-options").innerHTML =
+        `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
+    } else {
+        document.getElementById("question-options").innerHTML =
+        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>;`
     }
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
-    document.getElementById("question-options").innerHTML =
-        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
+   
 }
 /**
  * add one to score
