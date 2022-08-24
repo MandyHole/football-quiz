@@ -196,3 +196,24 @@ footer {
         margin: 1rem 0;
     }
 }
+
+.final-message {
+    font-size: 3rem;
+    font-weight: 800;
+    padding: 3%;
+    border: 2px solid #000;
+}
+
+.poor {
+    background-color: #B30000;
+    color: #000;
+}
+.medium {
+background-color: #000;
+color: #fff;
+border: 2px solid #1a5929;
+}
+.good {
+    background-color: #1a5929;
+    color: #000;
+}

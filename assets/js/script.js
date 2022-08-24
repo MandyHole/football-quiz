@@ -513,26 +513,11 @@ const footballQuestions = [{
     },
 ]
 
+/**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
     runGame();})
-    // let buttons = document.getElementsByTagName("button");
-    // for (let button of buttons) {
-    //     button.addEventListener("click", function () {
-    //         if (this.getAttribute("id") === "submit-answer") {
-    //             console.log("I clicked submit");
-    //             calculateAnswer();
-    //             addAttempt();
-    //         } else if (this.getAttribute("id") === "next-question-p") {
-    //             handleSubmit(); runGame(); console.log("I clicked next question");
-                // let questionButton = document.getElementById('next-question');
-                // questionButton.addEventListener('submit', handleSubmit);
-                // runGame();
-                // console.log("I clicked next question")
-//             }}
-//         );
-//     }
-// }
-// );
+
+    
 function submitAnswer() {
     calculateAnswer();
     addAttempt();
@@ -551,14 +536,15 @@ function runGame() {
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
+        // https://stackoverflow.com/questions/8287779/how-to-use-the-required-attribute-with-a-radio-input-field
             `<form>
-                <p><input type="radio" id="q1a" name="q1" value="q1answer">
+                <p><input type="radio" id="q1a" name="q1" value="q1answer" required="required">
                 <label for "q1a">q1answer</label><br>
-                <input type="radio"" id="q1b" name="q1" value="q1answer2"> 
+                <input type="radio"" id="q1b" name="q1" value="q1answer2" required="required"> 
                 <label for "q1b">q1answer2</label><br>
-                <input type="radio" id="q1c" name="q1" value="q1answer3">
+                <input type="radio" id="q1c" name="q1" value="q1answer3" required="required">
                 <label for "q1c" class="correct">q1answer3</label><br>
-                <input type="radio" id="q1d" name="q1" value="q1answer4">
+                <input type="radio" id="q1d" name="q1" value="q1answer4" required="required">
                 <label for "q1d">q1answer4</label><br></p>
             <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
             </form>`;
@@ -633,9 +619,11 @@ function calculateLeague() {
 function endGame() {
     console.log(footballQuestions[49])
     let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("feedback-gif").style.display = "none";
+    document.getElementById("question-box").style.display = "none";
     if (score <= 3){
-    document.getElementById("question-options").innerHTML = 
-    `It looks like you need a bit more practice! Why not play again to see if you can advance further?`
+    document.getElementById("final-message").innerHTML = 
+    `<p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
 }
 }
 /**

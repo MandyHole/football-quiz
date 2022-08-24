@@ -42,6 +42,7 @@
         <p>You will be asked 10 questions testing your football general knowledge. For every two correct answers, you advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to the Champions League?</p></section>
     <section id="question-grid-area">
         <div id="question-box">
+            <div id="question-area">
             <h2 id="question">Question 1</h2>
             <form id ="question-form">
                 <span id="question-options">
@@ -51,7 +52,8 @@
                         Option 4</span></p>
                 <button type="submit" id="submit-answer">Submit</button>
                 <button type="submit" id="next-question">Go to the next question</button>
-            </form>
+            </form></div>
+            <div id="final-message"><p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?<form></form><button onclick="endGame()">Play Again</button></p></div>
         </div>
         <div id="feedback-gif"><h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is XXXXXXX.</h3><img src="assets/images/miss-gif-1.gif" alt="Torres Missing a goal against Man United" class="gif"> </div>
     </section>
