@@ -517,7 +517,7 @@ const footballQuestions = [{
 document.addEventListener("DOMContentLoaded", function () {
     runGame();})
 
-    
+/** Run functions Calculate Answer and addAttempt when user clicks submit */    
 function submitAnswer() {
     calculateAnswer();
     addAttempt();
@@ -531,7 +531,6 @@ function runGame() {
     calculateLeague()
     let attempts = parseInt(document.getElementById("attempts").textContent);
     let questionID = Math.floor(Math.random() * 50)
-    console.log(console.log(footballQuestions[questionID]))
     if (attempts < 10) {
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("question").textContent = "question1";
@@ -564,17 +563,14 @@ function runGame() {
  * show next question button
  */
 function calculateAnswer() {
-    console.log("calculate")
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
-    console.log(document.querySelector('input[name="q1"]:checked').value);
     if (document.querySelector('input[name="q1"]:checked').value === "q1answer") {
         addScore();
     }
-    console.log("calc answer")
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
     document.getElementById("question-options").innerHTML =
-        `<form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
+        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
 }
 /**
  * add one to score
@@ -608,7 +604,6 @@ function calculateLeague() {
     } else {
         document.getElementById("league").innerText = "Grassroots";
     }
-    console.log("calculate league")
 }
 
 /**Remove questions/gifs
@@ -623,6 +618,15 @@ function endGame() {
     if (score <= 3){
     document.getElementById("final-message").innerHTML = 
     `<p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
+} else if (score <= 6) {
+    document.getElementById("final-message").innerHTML = 
+    `<p class="final-message medium">Well done on advancing up the leagues. With a bit more practice, you will be playing in the Premier or Champions Leagues!`
+} else if (score <= 9) {
+    document.getElementById("final-message").innerHTML = 
+    `<p class="final-message good">What a game! You are so close to the Champions League. Why not try again to see if you can make it to the top?`
+} else if (score == 10) {
+    document.getElementById("final-message").innerHTML = 
+    `<p class="final-message poor">Wow! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
 }
 }
 /**
