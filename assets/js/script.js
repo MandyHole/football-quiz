@@ -515,9 +515,10 @@ const footballQuestions = [{
 
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
-    runGame();})
+    runGame();
+})
 
-    
+
 function submitAnswer() {
     calculateAnswer();
     addAttempt();
@@ -536,7 +537,7 @@ function runGame() {
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
-        // https://stackoverflow.com/questions/8287779/how-to-use-the-required-attribute-with-a-radio-input-field
+            // https://stackoverflow.com/questions/8287779/how-to-use-the-required-attribute-with-a-radio-input-field
             `<form>
                 <p><input type="radio" id="q1a" name="q1" value="q1answer" required="required">
                 <label for "q1a">q1answer</label><br>
@@ -565,17 +566,21 @@ function runGame() {
  * show next question button
  */
 function calculateAnswer() {
-    console.log("calculate")
-    // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
-    console.log(document.querySelector('input[name="q1"]:checked').value);
-    if (document.querySelector('input[name="q1"]:checked').value === "q1answer") {
-        addScore();
-    }
-    console.log("calc answer")
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
     document.getElementById("question-options").innerHTML =
         `<form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`
+    // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
+    console.log(document.querySelector('input[name="q1"]:checked').value);
+    if (document.querySelector('input[name="q1"]:checked').value === "q1answer") {
+        addScore();
+        document.getElementById("feedback-gif").innerHTML =
+            `<h3 class="feedback miss-feedback">Score! Well done on choosing the correct answer: ${XXXXXXX}.</h3><img src="assets/images/${XXXXXXX}" alt="${XXXXXXX}" class="gif">`
+    } else {
+        document.getElementById("feedback-gif").innerHTML = 
+            `<h3 class = "feedback miss-feedback" > Oh no - you missed! The correct answer is ${XXXXXXX}. < /h3><img src="assets/images/${XXXXXXX}" alt="${XXXXXXX}" class="gif">`        
+    }
+
 }
 /**
  * add one to score
@@ -621,10 +626,10 @@ function endGame() {
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("feedback-gif").style.display = "none";
     document.getElementById("question-box").style.display = "none";
-    if (score <= 3){
-    document.getElementById("final-message").innerHTML = 
-    `<p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
-}
+    if (score <= 3) {
+        document.getElementById("final-message").innerHTML =
+            `<p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
+    }
 }
 /**
  * Reset score/attempts to 0 and league to grassroots
