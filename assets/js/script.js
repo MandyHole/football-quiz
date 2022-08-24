@@ -531,8 +531,9 @@ function runGame() {
     calculateLeague()
     let attempts = parseInt(document.getElementById("attempts").textContent);
     let questionID = Math.floor(Math.random() * 50)
-    if (attempts < 10) {
+    if (attempts < 2) {
         document.getElementById("feedback-gif").style.display = "none";
+        document.getElementById("final-message").style.display = "none";
         document.getElementById("question").textContent = "question1";
         document.getElementById("question-options").innerHTML =
             `<form>
@@ -546,7 +547,7 @@ function runGame() {
                 <label for "q1d">q1answer4</label><br></p>
             <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
             </form>`;
-    } else if (attempts === 10) {
+    } else if (attempts == 2) {
         endGame();
     } else {
         alert(`You have had too many attempts (more than 10): ${attempts}`);
@@ -606,26 +607,30 @@ function calculateLeague() {
     }
 }
 
-/**Remove questions/gifs
+/**Remove questions/gifs/rules
  * Add feedback message based on score
  * Add button to play again
  */
 function endGame() {
+    console.log("endgame");
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("feedback-gif").style.display = "none";
     document.getElementById("question-box").style.display = "none";
-    if (score <= 3){
+    document.getElementById("rules").style.display = "none";
+    document.getElementById("final-message").style.display = "block";
+
+    if (score < 3){
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
-} else if (score <= 6) {
+    `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score}. It looks like you need a bit more practice! Why not play again to see if you can advance further?</p>`
+} else if (score < 6) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message medium">Well done on advancing up the leagues. With a bit more practice, you will be playing in the Premier or Champions Leagues!`
-} else if (score <= 9) {
+    `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up the leagues. With a bit more practice, you will be playing in the Premier or Champions Leagues!`
+} else if (score < 10) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message good">What a game! You are so close to the Champions League. Why not try again to see if you can make it to the top?`
-} else if (score == 10) {
+    `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times. You are so close to the Champions League. Why not try again to see if you can make it to the top?`
+} else if (score < 11) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message poor">Wow! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
+    `<p class="final-message poor">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
 } else {
     alert(`Game over due to suspected cheating. Your score can't be more than 10: ${score}`);
     playAgain();
@@ -640,6 +645,8 @@ function playAgain() {
     document.getElementById("score").innerText = 0;
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
+    document.getElementById("final-message").style.display = "none";
+    document.getElementById("rules").style.display = "block";
     runGame()
 }
 
