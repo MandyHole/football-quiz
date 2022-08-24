@@ -611,7 +611,6 @@ function calculateLeague() {
  * Add button to play again
  */
 function endGame() {
-    console.log(footballQuestions[49])
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("feedback-gif").style.display = "none";
     document.getElementById("question-box").style.display = "none";
@@ -627,8 +626,11 @@ function endGame() {
 } else if (score == 10) {
     document.getElementById("final-message").innerHTML = 
     `<p class="final-message poor">Wow! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?`
-}
-}
+} else {
+    alert(`Game over due to suspected cheating. Your score can't be more than 10: ${score}`);
+    playAgain();
+    throw `Too many goals: ${score}`;
+}}
 /**
  * Reset score/attempts to 0 and league to grassroots
  * insert random question?
@@ -639,8 +641,6 @@ function playAgain() {
     document.getElementById("league").innerText = "Grassroots";
     document.getElementById("feedback-gif").style.display = "none";
     runGame()
-    console.log("playAgain");
-    // location.reload();
 }
 
 function handleSubmit(event) {
