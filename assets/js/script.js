@@ -633,12 +633,12 @@ function endGame() {
 } else if (score < 10) {
     document.getElementById("final-message").innerHTML = 
     `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times. You are so close to the Champions League. Why not try again to see if you can make it to the top? <form><button onclick="playAgain()">Play Again</button></form>`
-} else if (score < 11) {
+} else if (score < 11) { 
     document.getElementById("final-message").innerHTML = 
     `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title? <form><button onclick="playAgain()">Play Again</button></form>`
 } else {
-    alert(`Game over due to suspected cheating. Your score can't be more than 10: ${score}`);
-    playAgain();
+    document.getElementById("final-message").innerHTML = 
+    `Game over due to suspected cheating. Your score can't be more than 10: ${score} <form><button onclick="playAgain()">Play Again</button></form>`;
     throw `Too many goals: ${score}`;
 }}
 /**
