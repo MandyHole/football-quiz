@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Knowledge Quiz</title>
     <meta name="keywords" content="football, soccer, trivia, knowledge, quiz game, game, quiz">
-    <meta name="description" content="Test your general football knowledge. Are you good enough to advance to the Champions League?">
+    <meta name="description"
+        content="Test your general football knowledge. Are you good enough to advance to the Champions League?">
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,48 +19,60 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <!-- end of realfavicongenerator.net -->
-<script src="https://kit.fontawesome.com/0bbe49584c.js" crossorigin="anonymous"> </script>
+    <script src="https://kit.fontawesome.com/0bbe49584c.js" crossorigin="anonymous"> </script>
 </head>
 
 <body>
     <header>
-        <img src="assets/images/football-logo-sized.png" alt="Text 'football quiz' with two pictures of footballs for the o's in the word 'football'">
+        <img src="assets/images/football-logo-sized.png"
+            alt="Text 'football quiz' with two pictures of footballs for the o's in the word 'football'">
         <h1>Football Knowledge Quiz</h1>
         <div id="tally-grid">
-        <div id="score-area">
-            <p class="tally-text">Score: <span id="score">0</span></p>
+            <div id="score-area">
+                <p class="tally-text">Score: <span id="score">0</span></p>
+            </div>
+            <div id="attempts-area">
+                <p class="tally-text">Attempts: <span id="attempts">0</span></p>
+            </div>
+            <div id="league-area">
+                <p class="tally-text">League: <span id="league">Grassroots</span></p>
+            </div>
         </div>
-        <div id="attempts-area">
-            <p class="tally-text">Attempts: <span id="attempts">0</span></p>
-        </div>
-        <div id="league-area">
-            <p class="tally-text">League: <span id="league">Grassroots</span></p>
-        </div>
-    </div>
     </header>
     <section id="rules">
         <h2>Rules of the Game:</h2>
-        <p>You will be asked 10 questions testing your football general knowledge. For every two correct answers, you advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to the Champions League?</p></section>
+        <p>You will be asked 10 questions testing your football general knowledge. For every two correct answers, you
+            advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to
+            the Champions League?</p>
+    </section>
+    <section id="final-message">
+        <p class="poor">It looks like you need a bit more practice! Why not play again to see if you can advance
+            further?<form></form><button onclick="playAgain()">Play Again</button></p>
+        </div>
+    </section>
     <section id="question-grid-area">
         <div id="question-box">
             <div id="question-area">
-            <h2 id="question">Question 1</h2>
-            <form id ="question-form">
-                <span id="question-options">
-                    <p>Option 1<br>
-                        Option 2<br>
-                        Option 3<br>
-                        Option 4</span></p>
-                <button type="submit" id="submit-answer">Submit</button>
-                <button type="submit" id="next-question">Go to the next question</button>
-            </form></div>
-            <div id="final-message"><p class="final-message poor">It looks like you need a bit more practice! Why not play again to see if you can advance further?<form></form><button onclick="endGame()">Play Again</button></p></div>
-        </div>
-        <div id="feedback-gif"><img src="assets/images/miss-gif-1.gif" alt="Torres Missing a goal against Man United" class="gif"> </div>
+                <h2 id="question">Question 1</h2>
+                <form id="question-form">
+                    <span id="question-options">
+                        <p>Option 1<br>
+                            Option 2<br>
+                            Option 3<br>
+                            Option 4
+                    </span></p>
+                    <button type="submit" id="submit-answer">Submit</button>
+                    <button type="submit" id="next-question">Go to the next question</button>
+                </form>
+            </div>
+
+            <div id="feedback-gif"><img src="assets/images/miss-gif-1.gif"
+                    alt="Torres Missing a goal against Man United" class="gif"> </div>
     </section>
-<footer>
-    <i class="fa-solid fa-copyright"></i> Designs of Mendip 2022
-</footer>
+
+    <footer>
+        <i class="fa-solid fa-copyright"></i> Designs of Mendip 2022
+    </footer>
     <script src="assets/js/script.js"></script>
 </body>
 

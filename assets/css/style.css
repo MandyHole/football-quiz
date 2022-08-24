@@ -160,7 +160,8 @@ li {
 }
 
 .correct-feedback {
-    background-color: #1a5929;
+    color: #1a5929;
+    font-size: 1.5rem;
 }
 
 /* footer */
@@ -198,17 +199,18 @@ footer {
     }
 }
 
-.final-message {
-    font-size: 5rem;
-    font-weight: 800;
+#final-message {
+    font-size: 2rem;
     padding: 3%;
-    border: 2px solid #000;
+    width: 80%;
     margin: 0 auto;
+    text-align: center;
 }
-
+#final-message p {
+    font-weight: 800;
+}
 .poor {
-    background-color: #B30000;
-    color: #000;
+    color: #B30000;
 }
 .medium {
 background-color: #000;
