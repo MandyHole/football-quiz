@@ -1,3 +1,5 @@
+// https://bobbyhadz.com/blog/javascript-import-json-file
+
 import myJson from './data.json' assert {type: 'json'};
 console.log("myJson", myJson)
 const footballQuestions = myJson
@@ -524,6 +526,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * Calculate answer and league. Add 1 to attempts
  * End game if attempts = 10*/    
 function submitAnswer() {
+    // handleSubmit();
     calculateAnswer();
     calculateLeague()
     addAttempt();
@@ -542,15 +545,21 @@ function submitAnswer() {
  * Insert random question / submit button
  * set "feedback-gif" to none
  */
+
+//  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 const randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
-console.log(randomElement, "rnadomelement")
+// const correctAnswer = randomElement.correct;
+// const selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
+// console.log(selectedAnswer, "selected");
+
+
 function runGame() {
     // let questionID = Math.floor(Math.random() * 50)
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("final-message").style.display = "none";
         document.getElementById("question").textContent = randomElement.question;
         document.getElementById("question-options").innerHTML =
-            `<form>
+            `<form id="footballForm" method="post">
                 <p><input type="radio" id="q1a" name="q1" value=${randomElement.a} required="required">
                 <label for "q1a">${randomElement.a}</label><br>
                 <input type="radio"" id="q1b" name="q1" value=${randomElement.b} required="required"> 
@@ -559,9 +568,9 @@ function runGame() {
                 <label for "q1c" class="correct">${randomElement.c}</label><br>
                 <input type="radio" id="q1d" name="q1" value=${randomElement.d} required="required">
                 <label for "q1d">${randomElement.d}</label><br></p>
-            <p><button type="submit" id="submit-answer" onclick="submitAnswer()">Submit</button></p>
-            </form>`;
-}
+            <p><button type="submit" id="submit-answer" onclick="submitAnswer();return false">Submit</button></p>
+            </form>`;}
+
 
 /**
  * see if radio value === correct answer
@@ -575,10 +584,10 @@ function calculateAnswer() {
     if (document.querySelector('input[name="q1"]:checked').value === randomElement.correct) {
         addScore();
         document.getElementById("question-options").innerHTML =
-        `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`;
+        `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: ${randomElement.correct}.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`;
     } else {
         document.getElementById("question-options").innerHTML =
-        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is XXXXXXX.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`;
+        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is ${randomElement.correct}.</h3><form><button type="submit" id="next-question-p" onclick="runGame()">Go to Next Question</form>`;
     }
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
@@ -663,3 +672,7 @@ function playAgain() {
 function handleSubmit(event) {
     event.preventDefault();
 }
+
+// let footballForm = document.getElementById("footballForm");
+//         function handleForm(event) { event.preventDefault(); } 
+//         footballForm.addEventListener('submit', handleForm);
