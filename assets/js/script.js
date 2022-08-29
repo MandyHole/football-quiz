@@ -546,11 +546,12 @@ function submitAnswer() {
  */
 
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
-const randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
+var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
 
 
 
 function runGame() {
+    randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
     // let questionID = Math.floor(Math.random() * 50)
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("final-message").style.display = "none";
