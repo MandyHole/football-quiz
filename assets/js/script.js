@@ -647,6 +647,8 @@ function calculateLeague() {
  */
 function endGame() {
     console.log("endgame");
+    // https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
+    scroll(0,0)
     let score = parseInt(document.getElementById("score").innerText);
     document.getElementById("feedback-gif").style.display = "none";
     document.getElementById("question-box").style.display = "none";
