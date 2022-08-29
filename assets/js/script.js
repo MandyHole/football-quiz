@@ -568,7 +568,7 @@ function runGame() {
                 <label for "q1d">${randomElement.d}</label><br></p>
             <p><button type="button" id="submit-answer">Submit</button></p>
             </form>`;
-            let footballForm = document.getElementById("question-form");
+            let footballForm = document.getElementById("submit-answer");
             footballForm.addEventListener('click', submitAnswer);
             footballForm.addEventListener('click', handleSubmit);
         
