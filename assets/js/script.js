@@ -531,12 +531,16 @@ function submitAnswer() {
     addAttempt();
     let attempts = parseInt(document.getElementById("attempts").textContent);
     if (attempts == 10) {
-        endGame()
+        document.getElementById("next-question-box").style.display = "none";
+        document.getElementById("get-results").style.display = "block";
     } else if (attempts > 10){
         document.getElementById("final-message").style.display = "block";
         document.getElementById("final-message").innerHTML =
         `You have had too many attempts (more than 10): ${attempts}. <form><button type="button" onclick="${playAgain()}">Play Again</button></form>`;
         throw `Too many attempts: ${attempts}`;
+    } else {
+        document.getElementById("next-question-box").style.display = "block";
+
     };
 }
 
@@ -555,6 +559,8 @@ function runGame() {
     // let questionID = Math.floor(Math.random() * 50)
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("final-message").style.display = "none";
+        document.getElementById("get-results").style.display = "none";
+        document.getElementById("next-question-box").style.display = "none";
         document.getElementById("question").textContent = randomElement.question;
         document.getElementById("question-options").innerHTML =
             `<form id="question-form" method="post">
@@ -574,6 +580,9 @@ function runGame() {
         
         }
 
+        let getResults = document.getElementById("get-results");
+        getResults.addEventListener('click', endGame);
+        getResults.addEventListener('click', handleSubmit);
 
 
 /**
@@ -596,17 +605,18 @@ function calculateAnswer() {
     if (correctAnswer == selectedAnswer) {
         addScore();
         document.getElementById("question-options").innerHTML =
-        `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: ${randomElement.correct}.</h3><form id="next-question-button" method="post"><button type="button" id="next-question">Go to Next Question</form>`;
+        `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: ${randomElement.correct}.</h3>`;
     } else {
         document.getElementById("question-options").innerHTML =
-        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is ${randomElement.correct}.</h3><form id="next-question-button" method="post"><button type="button" id="next-question">Go to Next Question</form>`;
+        `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is ${randomElement.correct}.</h3>`;
     }
     document.getElementById("feedback-gif").style.display = "grid";
     // add innerhtml for feedback-gif box
-    let nextQuestionButton = document.getElementById("next-question");
-    nextQuestionButton.addEventListener('click', runGame);
-    nextQuestionButton.addEventListener('click', handleSubmit);
+
 }
+let nextQuestionButton = document.getElementById("next-question");
+nextQuestionButton.addEventListener('click', runGame);
+nextQuestionButton.addEventListener('click', handleSubmit);
 /**
  * add one to score
  */

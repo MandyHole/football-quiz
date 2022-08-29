@@ -46,8 +46,9 @@
             the Champions League?</p>
     </section>
     <section id="final-message">
-        <p class="poor">It looks like you need a bit more practice! Why not play again to see if you can advance
-            further?<form><button onclick="playAgain()">Play Again</button></form></p>
+        <p class="poor">
+            <form><button onclick="playAgain()">Play Again</button></form>
+        </p>
         </div>
     </section>
     <section id="question-grid-area">
@@ -56,21 +57,20 @@
                 <h2 id="question">Question 1</h2>
                 <form id="question-form">
                     <span id="question-options">
-                        <p>Option 1<br>
-                            Option 2<br>
-                            Option 3<br>
-                            Option 4
+                        <p>Options
                     </span></p>
                     <button type="submit" id="submit-answer">Submit</button>
-                    
                 </form>
-                <form id="next-question-button" method="post">
-                    <button type="button" id="next-question">Go to the next question</button>
-                </form>
-            </div></div>
+            </div>
+            <div id="next-question-box">
+                <form id="next-question-button" method="post"><button type="button" id="next-question">Go to Next Question</form></div>
+                <div id="final-question-box">
+                    <form id="get-results" method="post"><button type="button" id="get-results">Game over: get results</form>
+                </div>
+        </div>
 
-            <div id="feedback-gif"><img src="assets/images/miss-gif-1.gif"
-                    alt="Torres Missing a goal against Man United" class="gif"> </div>
+        <div id="feedback-gif"><img src="assets/images/miss-gif-1.gif" alt="Torres Missing a goal against Man United"
+                class="gif"> </div>
     </section>
 
     <footer>
