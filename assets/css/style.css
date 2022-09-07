@@ -235,4 +235,9 @@ footer {
         width: 100%;
         margin: 1rem 0;
     }
+    #question {
+        font-size: 1.25rem;
+}
+.miss-feedback {
+    font-size: 1.25rem;}
 }
