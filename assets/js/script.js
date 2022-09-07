@@ -700,6 +700,24 @@ function handleSubmit(event) {
     event.preventDefault();
 }
 
+
+// video script from https://digiztal.blogspot.com/2021/04/embed-youtube-video-autoplay-but-muted.html
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    width: '100%',
+    videoId: '4Dk7eYoj5GI',
+    playerVars: { 'autoplay': 1, 'playsinline': 1 },
+    events: {
+      'onReady': onPlayerReady
+    }
+  });
+}
+
+
+
+
 // let footballForm = document.getElementById("footballForm");
 //         function handleForm(event) { event.preventDefault(); } 
 //         footballForm.addEventListener('submit', handleForm);
