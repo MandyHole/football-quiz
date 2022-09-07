@@ -520,7 +520,8 @@ const footballQuestions = myJson
 
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
-    runGame();})
+    runGame();
+    document.getElementById("show-rules").style.display = "none";})
 
 /** Activated when user clicks submit
  * Calculate answer and league. Add 1 to attempts
@@ -529,6 +530,8 @@ function submitAnswer() {
     calculateAnswer();
     calculateLeague()
     addAttempt();
+    document.getElementById("rules").style.display = "none";
+    document.getElementById("show-rules").style.display = "block";
     let attempts = parseInt(document.getElementById("attempts").textContent);
     if (attempts == 10) {
         document.getElementById("next-question-box").style.display = "none";
@@ -617,6 +620,23 @@ function calculateAnswer() {
 let nextQuestionButton = document.getElementById("next-question");
 nextQuestionButton.addEventListener('click', runGame);
 nextQuestionButton.addEventListener('click', handleSubmit);
+nextQuestionButton.addEventListener('click', hideRules);
+
+let showRulesButton = document.getElementById("show-rules");
+showRulesButton.addEventListener('click', showRules);
+
+function showRules(){
+    document.getElementById("rules").style.display = "block";
+    // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+    document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  document.getElementById("show-rules").style.display = "none";
+}
+
+function hideRules(){
+    document.getElementById("rules").style.display = "none";
+    document.getElementById("show-rules").style.display = "block";
+}
 /**
  * add one to score
  */
