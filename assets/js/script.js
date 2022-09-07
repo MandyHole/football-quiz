@@ -625,6 +625,7 @@ nextQuestionButton.addEventListener('click', hideRules);
 let showRulesButton = document.getElementById("show-rules");
 showRulesButton.addEventListener('click', showRules);
 
+/**show rules section, bring user to top of page and hide show rules button */
 function showRules(){
     document.getElementById("rules").style.display = "block";
     // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
@@ -632,7 +633,7 @@ function showRules(){
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   document.getElementById("show-rules").style.display = "none";
 }
-
+/** Hide rules and show button*/
 function hideRules(){
     document.getElementById("rules").style.display = "none";
     document.getElementById("show-rules").style.display = "block";
@@ -687,16 +688,16 @@ function endGame() {
 
     if (score < 3){
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score}. It looks like you need a bit more practice! Why not play again to see if you can advance further? <form><button onclick="playAgain()">Play Again</button></form></p>`
+    `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score}. It looks like you need a bit more practice! Why not play again to see if you can advance further? </p><form><button onclick="playAgain()">Play Again</button></form>`
 } else if (score < 6) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up the leagues. With a bit more practice, you will be playing in the Premier or Champions Leagues! <form><button onclick="playAgain()">Play Again</button></form>`
+    `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up the leagues. With a bit more practice, you will be playing in the Premier or Champions Leagues! </p><form><button onclick="playAgain()">Play Again</button></form>`
 } else if (score < 10) {
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times. You are so close to the Champions League. Why not try again to see if you can make it to the top? <form><button onclick="playAgain()">Play Again</button></form>`
+    `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times. You are so close to the Champions League. Why not try again to see if you can make it to the top?</p> <form><button onclick="playAgain()">Play Again</button></form>`
 } else if (score < 11) { 
     document.getElementById("final-message").innerHTML = 
-    `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title? <form><button onclick="playAgain()">Play Again</button></form>`
+    `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title? </p><form><button onclick="playAgain()">Play Again</button></form>`
 } else {
     document.getElementById("final-message").innerHTML = 
     `Game over due to suspected cheating. Your score can't be more than 10: ${score} <form><button onclick="playAgain()">Play Again</button></form>`;

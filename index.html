@@ -45,27 +45,24 @@
             advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to
             the Champions League?</p>
     </section>
-    <section id="final-message">
-        <p class="poor">
+    <div id="final-message">
+        <p class="poor">Final message goes here </p>
             <form><button onclick="playAgain()">Play Again</button></form>
-        </p>
-        </div>
-    </section>
+    </div>
     <section id="question-grid-area">
         <div id="question-box">
             <div id="question-area">
                 <h2 id="question">Question 1</h2>
                 <form id="question-form">
-                    <span id="question-options">
-                        <p>Options
-                    </span></p>
-                    <button type="submit" id="submit-answer" onclick="generateVidID()">Submit</button>
+                    <p id="question-options">Options
+                    </p>
+                    <!-- <button type="submit" id="submit-answer" onclick="generateVidID()">Submit</button> -->
                 </form>
             </div>
             <div id="next-question-box">
-                <form id="next-question-button" method="post"><button type="button" id="next-question">Go to Next Question</form></div>
+                <form id="next-question-button" method="post"><button type="button" id="next-question">Go to Next Question</button></form></div>
                 <div id="final-question-box">
-                    <form id="get-results" method="post"><button type="button" id="get-results">Game over: get results</form>
+                    <form method="post"><button type="button" id="get-results">Game over: get results</button></form>
                 </div>
         </div>
 
