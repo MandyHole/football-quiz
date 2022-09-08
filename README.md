@@ -1,3 +1,47 @@
+# Football Quiz
+
+This is a quiz to test football fans' general knowledge of the sport; quiz players have a goal to earn their spot in the Champions League by getting all ten question attempts correct (i.e., scoring 10 out of 10). As 'football' could refer to two different sports, depending on geograpical location, I included two footballs (as opposed to American footballs) in the main header to make it clear. Players are encouraged to play again to either improve or maintain their title.
+
+<img src="assets/images/football-quiz-collage.jpg" alt="screenshots of mobile and desktop views of the football quiz at various points" width=50%>
+
+### Existing Features
+
+### Header
+The header makes it clear what the website is. It is 80% width to line up with the content and be responsive across devices
+
+<img src="assets/images/football-logo-sized.png" alt="Words 'Football quiz' with footballs (i.e, soccer balls) as the 'o's in the word 'Football'">
+
+### Score tally
+A band across the top of the website shows the player how many answers they have had correct, how many attempts they've had (i.e., how many questions they have answered) and what their current league status is. This is optimised for mobile with the league dropping to the next line.
+
+### Rules
+The rules section at the top spells out clearly what the game's goal is. It disappears once the first answer is submitted to keep the page cleaner, but there is a button at the bottom of the page to make it reappear if a user wishes. It will subsequently disappear again once the user goes onto submit another answer or views the next question.
+
+### Questions
+A user gets randomly asked 10 questions generated from a dictionary of 50 possibilities. 
+
+### Question Feedback
+Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They also see a video of a professional footballer either scoring a great goal (if the answer is correct)...or a video of a professional missing an open goal (if the answer is incorrect). They are then prompted to go to the next question.
+
+### End of Game Feedback
+Once the player has responded to two ten questions, they are taken to a screen with an analysis of their performance and encouragement to play again. A 'play again' button resets the game so players can easily start again without refreshing the page.
+
+## Future Features to Implement
+Update questions/answers and add more to keep the content current and interesting.
+
+Create a login where users can see their previous results
+
+## Testing
+
+### Validator Testing
+
+
+<ul><li><strong>HTML:</strong> No errors were returned when passing through the official <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html" aria-label="W3C validator website - opens in new window" target="new">W3C validator</a></li>
+<li><strong>CSS: </strong> No errors were found when passing through the official (Jigsaw) validator</li>
+Javascript
+No errors were found passing through the jshint validator.
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome MandyHole,

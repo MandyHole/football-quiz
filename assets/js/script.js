@@ -92,6 +92,7 @@ function calculateAnswer() {
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     if (correctAnswer == selectedAnswer) {
         addScore();
+        showGoalGif();
         document.getElementById("question-options").innerHTML =
         `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: ${randomElement.correct}.</h3>`;
     } else {
@@ -205,3 +206,41 @@ function playAgain() {
 function handleSubmit(event) {
     event.preventDefault();
 }
+function showGoalGif() {
+        let footballGoalGif = [{
+                gifFilename: 'messi.gif',
+                gifAlt: 'Messi goal - sourced from https://giphy.com/gifs/fcbarcelona-PnPU9GhN3V7oVizSHG'
+            },
+            {
+                gifFilename: 'barcelona-goal.gif',
+                gifAlt: 'Barcelona goal - sourced from https://giphy.com/gifs/fcbarcelona-skills-goals-Ns4RG72Ay6t0s'
+            },
+            {
+                gifFilename: 'ronaldo.gif',
+                gifAlt: 'Ronaldo goal - sourced from https://giphy.com/gifs/manutd-united-mufc-ggmu-CXOiDARnwHOG9ajo1s'
+            },
+            {
+                gifFilename: 'rooney.gif',
+                gifAlt: 'Rooney goal - sourced from https://giphy.com/gifs/manutd-manchester-united-mufc-ggmu-fYurZZ9YPdHMA31cWl'
+            },
+            {
+                gifFilename: 'vanpersie.gif',
+                gifAlt: 'Van Persie goal - sourced from https://giphy.com/gifs/sbnation-sbnation-robin-iaOhvZuaVprxe'
+            },
+            {
+                gifFilename: 'chelsea.gif',
+                gifAlt: 'Chelsea goal - sourced from https://giphy.com/gifs/nss-sports-U8CZMODTWvST8YppXg'
+            },
+            {
+                gifFilename: 'header.gif',
+                gifAlt: 'Goal from a header - sourced from https://giphy.com/gifs/nss-sports-wZsYA7tcpsO8NY412w'
+            },
+            {
+                gifFilename: 'realmadrid.gif',
+                gifAlt: 'Goal from Real Madrid - sourced from https://giphy.com/gifs/nss-sports-wZsYA7tcpsO8NY412w'
+            }
+        ];
+        var randomGoalGif = footballGoalGif[Math.floor(Math.random() * footballGoalGif.length)];
+        document.getElementById("feedback-gif").innerHTML = `<img src="assets/images/${randomGoalGif.gifFilename}" alt="${randomGoalGif.gifAlt}" width = "80%">`;
+    }
+    
