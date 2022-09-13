@@ -219,10 +219,14 @@ function showGoalGif() {
                 giphyHref:"https://giphy.com/gifs/manutd-manchester-united-mufc-ggmu-fYurZZ9YPdHMA31cWl"},
                 {giphySource:"https://giphy.com/embed/iaOhvZuaVprxe",
                 giphyHref:"https://giphy.com/gifs/sbnation-sbnation-robin-iaOhvZuaVprxe"},
-                {giphySource:"giphy.com/embed/U8CZMODTWvST8YppXg",
+                {giphySource:"https://giphy.com/embed/U8CZMODTWvST8YppXg",
                 giphyHref:"https://giphy.com/gifs/nss-sports-U8CZMODTWvST8YppXg"},
                 {giphySource:"https://giphy.com/embed/wZsYA7tcpsO8NY412w",
                 giphyHref:"https://giphy.com/gifs/nss-sports-wZsYA7tcpsO8NY412w"},
+                {giphySource:"https://giphy.com/embed/8cyro9Vo2FNhZ5mucq",
+                giphyHref:"https://giphy.com/gifs/messi-goal-fk-8cyro9Vo2FNhZ5mucq"},
+                {giphySource:"https://giphy.com/embed/4LVVqf0WhbkmVuL3eR",
+                giphyHref:"https://giphy.com/gifs/fcbayern-penalty-lewandowski-robert-4LVVqf0WhbkmVuL3eR"},
 
          ];
         var randomGoalGif = footballGoalGif[Math.floor(Math.random() * footballGoalGif.length)];
@@ -230,57 +234,30 @@ function showGoalGif() {
         document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomGoalGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomGoalGif.giphyHref}">via GIPHY</a></p>`;
     }
     function showMissGif() {
-        [
+        let footballMissGif =   [
             {giphySource:"https://giphy.com/embed/3ohhwyqTKZQB2C1VIs",
             giphyHref:"https://giphy.com/gifs/spursofficial-football-soccer-3ohhwyqTKZQB2C1VIs"},
             {giphySource:"https://giphy.com/embed/F1ywhxHnJj5T2",
             giphyHref:"https://giphy.com/gifs/roma-save-as-roma-szczesny-F1ywhxHnJj5T2"},
+            {giphySource:"https://giphy.com/embed/hZvjPBn88kLcY",
+            giphyHref:"https://giphy.com/gifs/league-slips-gifrific-hZvjPBn88kLcY"},
+            {giphySource:"https://giphy.com/embed/3o6UBjSY4OO6jOpDRm",
+            giphyHref:"https://giphy.com/gifs/fail-sporza-3o6UBjSY4OO6jOpDRm"},
 
+            {giphySource:"https://giphy.com/embed/3oEjHRI8390hTUFs88",
+            giphyHref:"https://giphy.com/gifs/univisiondeportes-chile-ca2016-copa-america-centenario-3oEjHRI8390hTUFs88"},
 
+            {giphySource:"https://giphy.com/embed/85DHpkfxH3yeSFzng6",
+            giphyHref:"https://giphy.com/gifs/nss-sports-milan-penalty-higuain-85DHpkfxH3yeSFzng6"},
+
+            {giphySource:"https://giphy.com/embed/L4TegGTvLKLK9Z3sGs",
+            giphyHref:"https://giphy.com/gifs/ElevenSportsBE-elevensports-elevensportsgif-forthefans-L4TegGTvLKLK9Z3sGs"},
             
-            {giphySource:"https://giphy.com/embed/CXOiDARnwHOG9ajo1s",
-            giphyHref:"https://giphy.com/gifs/manutd-united-mufc-ggmu-CXOiDARnwHOG9ajo1s"},
-            {giphySource:"https://giphy.com/embed/fYurZZ9YPdHMA31cWl",
-            giphyHref:"https://giphy.com/gifs/manutd-manchester-united-mufc-ggmu-fYurZZ9YPdHMA31cWl"},
-            {giphySource:"https://giphy.com/embed/iaOhvZuaVprxe",
-            giphyHref:"https://giphy.com/gifs/sbnation-sbnation-robin-iaOhvZuaVprxe"},
-            {giphySource:"giphy.com/embed/U8CZMODTWvST8YppXg",
-            giphyHref:"https://giphy.com/gifs/nss-sports-U8CZMODTWvST8YppXg"},
-            {giphySource:"https://giphy.com/embed/wZsYA7tcpsO8NY412w",
-            giphyHref:"https://giphy.com/gifs/nss-sports-wZsYA7tcpsO8NY412w"},
-
+            {giphySource:"https://giphy.com/embed/3oxRmFQQgyj9zEA4hi",
+            giphyHref:"https://giphy.com/gifs/fail-sporza-3oxRmFQQgyj9zEA4hi"},
      ];
+
         var randomMissGif = footballMissGif[Math.floor(Math.random() * footballMissGif.length)];
         document.getElementById("feedback-gif").style.display = "grid";
         document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomMissGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomMissGif.giphyHref}">via GIPHY</a></p>`;
     }
-    
-    
-
-    let footballMissGif = [{
-
-        <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/F1ywhxHnJj5T2" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/roma-save-as-roma-szczesny-F1ywhxHnJj5T2">via GIPHY</a></p>
-        gifFilename: 'miss4.gif',
-        gifAlt: 'Missed penalty - sourced from https://giphy.com/gifs/league-slips-gifrific-hZvjPBn88kLcY'
-    },
-    {
-        gifFilename: 'miss5.gif',
-        gifAlt: 'Missed goal at close range - sourced from https://giphy.com/gifs/fail-sporza-3o6UBjSY4OO6jOpDRm'
-    },
-    {
-        gifFilename: 'miss6.gif',
-        gifAlt: 'Missed Penalty - sourced from https://giphy.com/gifs/univisiondeportes-chile-ca2016-copa-america-centenario-3oEjHRI8390hTUFs88'
-    },
-    {
-        gifFilename: 'miss7.gif',
-        gifAlt: 'Missed penalty - sourced from https://giphy.com/gifs/nss-sports-milan-penalty-higuain-85DHpkfxH3yeSFzng6'
-    },
-    {
-        gifFilename: 'miss8.gif',
-        gifAlt: 'Disappointed football player in front of goal - sourced from https://giphy.com/gifs/ElevenSportsBE-elevensports-elevensportsgif-forthefans-L4TegGTvLKLK9Z3sGs'
-    },
-    {
-        gifFilename: 'miss9.gif',
-        gifAlt: 'Miss from close range - sourced from https://giphy.com/gifs/fail-sporza-3oxRmFQQgyj9zEA4hi'
-    }
-];
