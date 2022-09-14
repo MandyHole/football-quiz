@@ -114,6 +114,7 @@ nextQuestionButton.addEventListener('click', runGame);
 nextQuestionButton.addEventListener('click', handleSubmit);
 nextQuestionButton.addEventListener('click', hideRules);
 
+
 let showRulesButton = document.getElementById("show-rules");
 showRulesButton.addEventListener('click', showRules);
 

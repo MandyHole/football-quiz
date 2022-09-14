@@ -171,6 +171,9 @@ li {
 #feedback-gif {
     grid-area: feedback-gif;
 }
+#feedback-gif > p {
+    text-align: center;
+}
 
 .gif {
     width: 100%;
