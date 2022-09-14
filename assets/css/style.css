@@ -115,15 +115,19 @@ li {
     margin: 0 auto;
     text-align: center;
 }
+
 #final-message p {
     font-weight: 800;
 }
+
 .poor {
     color: #B30000;
 }
+
 .medium {
-color: #000;
+    color: #000;
 }
+
 .good {
     color: #1a5929;
 }
@@ -168,10 +172,11 @@ color: #000;
     grid-area: feedback-gif;
 }
 
-.gif{
+.gif {
     width: 100%;
     display: block;
 }
+
 .feedback {
     margin-top: 1rem;
 }
@@ -185,12 +190,14 @@ color: #000;
     color: #1a5929;
     font-size: 1.5rem;
 }
+
 #show-rules {
     text-align: center;
 }
+
 #show-rules button {
     width: auto;
- }
+}
 
 /* footer */
 
@@ -203,22 +210,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
-/* video code from https://digiztal.blogspot.com/2021/04/embed-youtube-video-autoplay-but-muted.html  */
-
-.iframe-container{
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    height: 0;
-  }
-  .iframe-container iframe{
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
 
 /* media queries */
 @media screen and (max-width: 700px) {
@@ -237,17 +228,22 @@ footer {
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: .5rem 0;
     }
+
     button {
         width: 100%;
         margin: 1rem 0;
     }
+
     #question {
         font-size: 1.25rem;
-}
-.miss-feedback {
-    font-size: 1.25rem;}
+    }
 
-#question-box p, #question-box li {
-    font-size: 1.25rem;
-}
+    .miss-feedback {
+        font-size: 1.25rem;
+    }
+
+    #question-box p,
+    #question-box li {
+        font-size: 1.25rem;
+    }
 }
