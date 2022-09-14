@@ -44,7 +44,6 @@ var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestio
 
 function runGame() {
     randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
-    // let questionID = Math.floor(Math.random() * 50)
         document.getElementById("feedback-gif").style.display = "none";
         document.getElementById("final-message").style.display = "none";
         document.getElementById("get-results").style.display = "none";

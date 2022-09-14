@@ -25,7 +25,7 @@
 <body>
     <header>
         <img src="assets/images/football-logo-sized.png"
-            alt="Text 'football quiz' with two pictures of footballs for the o's in the word 'football'">
+            alt="Text 'football quiz' with two pictures of footballs for the o's in the word 'football'. Clipart image from https://www.kindpng.com with thanks">
         <h1>Football Knowledge Quiz</h1>
         <div id="tally-grid">
             <div id="score-area">
@@ -56,7 +56,6 @@
                 <form id="question-form">
                     <p id="question-options">Options
                     </p>
-                    <!-- <button type="submit" id="submit-answer" onclick="generateVidID()">Submit</button> -->
                 </form>
             </div>
             <div id="next-question-box">
@@ -67,40 +66,6 @@
         </div>
 
         <div id="feedback-gif"> 
-            <!-- https://digiztal.blogspot.com/2021/04/embed-youtube-video-autoplay-but-muted.html -->
-            <div class="iframe-container">
-            <div id="player"></div>
-          </div>
-          <!-- <script>
-            var vidID = ['I1MpJJ4tfLY', '2SATljljXCY', 'pSdazqyfPtE', '_WHBKQExJmg', 'Q4PQEETKzqI', 'tsgSNizJF6k', 'lAzYAQy8r9U', 'mJ8XGUgvoAM', 'XiJ9KbtA46Q', '4lRTLRCuGkE', '', 'HRAI0Rmhxks', 'kujoliVcPMU', '6HTQ-VdQoCM', 'DeKSmd-hjwo', 'ZDDVhvrN0DE', 'L2wpH09cOU4', 'GpSwJWr-hMI', 'BPgQTAJRzmw','7JbOoJ_dge4', 'GN39jtgzbck']
-            var randomNum = Math.floor(Math.random() * vidID.length)
-            var randomVid = vidID[randomNum]
-            function generateVidID(){
-            randomVid = vidID[randomNum]
-            return randomVid
-            }
-          
-            var tag = document.createElement('script');
-          
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-          var player;
-            function onYouTubeIframeAPIReady() {
-              player = new YT.Player('player', {
-                width: '100%',
-                videoId: generateVidID(),
-                playerVars: { 'autoplay': 1, 'playsinline': 1 },
-                events: {
-                  'onReady': onPlayerReady
-                }
-              });
-            }
-           function onPlayerReady(event) {
-               event.target.mute();
-              event.target.playVideo();
-            }
-          </script> -->
 </div>
     </section>
     <div id="show-rules">

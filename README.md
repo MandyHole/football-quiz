@@ -1,10 +1,13 @@
 # Football Quiz
 
-This is a quiz to test football fans' general knowledge of the sport; quiz players have a goal to earn their spot in the Champions League by getting all ten question attempts correct (i.e., scoring 10 out of 10). As 'football' could refer to two different sports, depending on geograpical location, I included two footballs (as opposed to American footballs) in the main header to make it clear. Players are encouraged to play again to either improve or maintain their title.
+This is a quiz to test football fans' general knowledge of the sport; quiz players have a goal to earn their spot in the Champions League by getting all ten question attempts correct (i.e., scoring 10 out of 10). As 'football' could refer to two different sports, depending on geograpical location, I included two footballs (as opposed to American footballs) in the main header to make it clear from first glance on the website. Once the game is complete, players are encouraged to play again to either improve or maintain their title.
 
-<img src="assets/images/football-quiz-collage.jpg" alt="screenshots of mobile and desktop views of the football quiz at various points" width=50%>
+<img src="assets/readme-images/football-quiz-collage.jpg" alt="screenshots of mobile and desktop views of the football quiz at various points" width=50%>
 
-### Existing Features
+## Existing Features
+
+### Favicon
+The favicon is the same image that is used in the logo to add consistency across the site. It also makes it very clear that this is a football-related website.
 
 ### Header
 The header makes it clear what the website is. It is 80% width to line up with the content and be responsive across devices
@@ -15,138 +18,177 @@ The header makes it clear what the website is. It is 80% width to line up with t
 A band across the top of the website shows the player how many answers they have had correct, how many attempts they've had (i.e., how many questions they have answered) and what their current league status is. This is optimised for mobile with the league dropping to the next line.
 
 ### Rules
-The rules section at the top spells out clearly what the game's goal is. It disappears once the first answer is submitted to keep the page cleaner, but there is a button at the bottom of the page to make it reappear if a user wishes. It will subsequently disappear again once the user goes onto submit another answer or views the next question.
+The rules section at the top spells out clearly what the game's goal is. It disappears once the first answer is submitted to keep the page cleaner, but there is a button at the bottom of the page to make it reappear if a user wishes. It will subsequently disappear again once the user goes onto submit another answer or views the next question at which time the button reappears at the bottom of the page so a player can make the rules reappear at any point.
 
 ### Questions
-A user gets randomly asked 10 questions generated from a dictionary of 50 possibilities. 
+A user gets randomly asked 10 questions generated from a javascript object of 50 possibilities. 
 
 ### Question Feedback
-Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They also see a video of a professional footballer either scoring a great goal (if the answer is correct)...or a video of a professional missing an open goal (if the answer is incorrect). They are then prompted to go to the next question.
+Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They will see a gif of a professional footballer either scoring a great goal and/or looking happyp (if the answer is correct) or a gif of a professional missing an open goal and/or looking disappointed (if the answer is incorrect). They are then prompted to go to the next question.
 
 ### End of Game Feedback
-Once the player has responded to two ten questions, they are taken to a screen with an analysis of their performance and encouragement to play again. A 'play again' button resets the game so players can easily start again without refreshing the page.
+Once the player has responded to ten questions, they are taken to a screen with an analysis of their performance and encouragement to play again. A 'play again' button resets the game so players can easily start again without manually refreshing the page.
 
 ## Future Features to Implement
-Update questions/answers and add more to keep the content current and interesting.
+<ul>
+<li>Update questions/answers and add more gifs to keep the content current and interesting.</li>
 
-Create a login where users can see their previous results
+<li>Create a login where users can see their previous performance.</li>
+
+<li>Create another page entitled Champions League Leaders Board, which displays the names of players who answered all ten questions correctly (this would be populated by a prompt to players who score ten points who would be invited to submit their name onto a public leader board should they wish to do so). There would be a validation process to ensure that nothing inappropriate was submitted.</li></ul>
 
 ## Testing
 
 ### Validator Testing
 
+<ul>
+<li><strong>HTML:</strong> No errors were returned when passing through the official <a href="https://validator.w3.org/" aria-label="W3C validator website - opens in new window" target="new">W3C validator</a></li>
+<li><strong>CSS: </strong> No errors were found when passing through the official <a href="https://jigsaw.w3.org/css-validator/" aria-label="W3C validator website - opens in new window" target="new">(Jigsaw) validator</a></li>
+<li><strong>Javascript: </strong>No errors were found passing through the <a href="https://jshint.com/" aria-label="W3C validator website - opens in new window" target="new">jshint validator.</a></li>
+</ul>
 
-<ul><li><strong>HTML:</strong> No errors were returned when passing through the official <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html" aria-label="W3C validator website - opens in new window" target="new">W3C validator</a></li>
-<li><strong>CSS: </strong> No errors were found when passing through the official (Jigsaw) validator</li>
-Javascript
-No errors were found passing through the jshint validator.
+### Buttons
+
+## Deployment
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+<ol><li>In the GitHub repository, navigate to the Settings tab</li>
+<li>From the source section drop-down menu, select the Master Branch</li>
+<li>Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.</li>
+</ol>
+The live link can be found here - https://mandyhole.github.io/football-quiz
+
+## Credits
+
+### Content
+The facts for the quiz comes from:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Main_Page" target="new" aria-label="Wikipedia website - opens in a new window">Wikipedia</a></li>
+<li><a href="https://www.statista.com/topics/1595/soccer/#dossierContents__outerWrapper" target="new" aria-label="Statista website - opens in a new window">Statista Website</a></li>
+<li><a href="https://www.stadiumguide.com/present/england/" target="new" aria-label="Stadium Guide website - opens in a new window">Stadium Guide Website</a></li> 
+<li><a href="https://www.thefa.com/football-rules-governance/lawsandrules" target="new" aria-label="The FA website, rules section - opens in a new window">The FA Website</a></li>
+<li>Hasbro World Football Trivial Pursuit Bite Size game</li></ul>
+
+### Media
+
+Clipart Image for Favicon/Logo: <a href="https://www.kindpng.com/imgv/TJJiT_png-clipart-soccer-ball-best-real-soccer-ball/" target="new" aria-label="Kind PNG website - opens in a new window">Kind PNG website</a>
+
+Gifs: <a href="https://giphy.com/" target="new" aria-label="Giphy website - opens in a new window">Giphy website</a>
+
+Nunito font used throughout the site: Google Fonts https://fonts.google.com/
+
+Platform for inserting and creating a Favicon image: https://realfavicongenerator.net/
+
+Platform for creating logo: Adobe Illustrator
+
+### Code
+
+Fix Manifest error appearing in console (from Favicon code): https://stackoverflow.com/questions/59068699/manifest-line-1-column-1-syntax-error
+
+Favicon: https://realfavicongenerator.net/
+
+Importing json file: https://bobbyhadz.com/blog/javascript-import-json-file
+
+Formatting array in json file: https://www.w3schools.com/whatis/whatis_json.asp
+
+How to bring user to top of page:  // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp and https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
 
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome MandyHole,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+<!-- 
+Testing
+Layout:
+I originally designed the homepage using the theories taught in the course (using floats, display: none, column widths/heights). With a rather complicated design of double column intro and an aside, it was very difficult to look good without an unmanageable number of breakpoints; to have my content and photos line up, I had to give each div an arbitrary size, which meant that, depending on media widths, I would have had massive gaps between my columns. Also, I was having to have extra filler images appear or be hidden depending on how my content was split so there wasn’t a massive gap in a column. I also would have to check the height for various breakpoints to make sure the columns were the same size. Finally, as my aside appeared in the wrong place in the mobile view (under the qualifications intro), I then had to hide/show the original/duplicate depending on the media width. It was all very messy and complicated, and I knew there had to be a better way...
 
-A blue button should appear to click: _Make Public_,
+Upon recommendation from my Mentor, I tried flex-box for my pros/cons page. Researching that also let me to grid css, which I implemented on my tips page. Both were remarkably easier to use, and my gaps between both pages were consistent and the pages looked much more professional. Upon reflection, I decided to redo my homepage with grid to ensure consistency in gaps/margins through the site. Unfortunately, doing it retrospectively caused a lot more effort and took a lot of experimentation to get it right, removing the extra divs, images and formatting that were no longer required.
 
-Another blue button should appear to click: _Open Browser_.
+Hamburger menu:
+I discovered that this would not work properly if the user had already scrolled down the page. Working with my mentor, we discovered the heading needed to be fixed as opposed to sticky.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+Media queries:
+To make the site responsive, I went from three to two columns on both the home and Tips pages for a smaller screen/tablet, and then down again to a one column layout for mobile. For the pros/cons page, it went from a two column to a one column layout for mobile. I also had to add alternate mobile images for some background images to ensure that the dog’s face was shown.
 
-A blue button should appear to click: _Make Public_,
+Consistency:
+As I reviewed the site, I realised that there was a bit of inconsistency in various elements across the site, which I sought to address by changing the inconsistent elements to be stylised by classes which I then implemented throughout the site, removing only elements that had to change (e.g., the background image on the hero) to be used in specific ids/classes. I used this approach for the headings, buttons, top hero area and form areas (and as I mentioned earlier, redoing the homepage to ensure consistency with row and column gaps/margins).
 
-Another blue button should appear to click: _Open Browser_.
+Google Fonts:
+As I reviewed the deployed site on my mobile, I realised that it wasn't recognising the Google Chewy font family and instead used a cursive. I realised that the link to the Google fonts was at the bottom of the CSS file instead of the top so I moved it to the top, which fixed the issue. To be on the safe side, I also changed the alternative font family to serif instead of cursive in case a font rendering issues happened to occur.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Incorrectly sized image and missing description:
+As I reviewed the site using Lighthouse, I realised one image was sized to 4000px (I meant to do 400px) which slowed down the website as it was 1.7MB. I resized the image to 300px. I also realised that it wasn't picking up the meta description for the Tips page due to a typo so I fixed that.
 
-To log into the Heroku toolbelt CLI:
+Colour contrast:
+When initially selecting colours, I utilised WebAIM's colour contrast checker to ensure the background colours I used were suitable for dark colour text at a normal size. I then found the lightest black shade I could that still met AAA standards for normal text to use as my main font colour. I put the blue/yellow combination into a colour wheel to find a complementary third colour: a shade of magenta pink. As it did not meet colour contrast standards for text, I used it solely for decoration.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Validator Testing
+HTML: No errors were returned when passing through the official W3C validator
+CSS: No errors were found when passing through the official (Jigsaw) validator
+Unfixed Bugs
+Form: The form submissions are currently set up to go to a form dump area on the Code Institute website. Ideally, these would be sent to my email so that I could respond accordingly, have reCAPTCHA functionality to weed out spam and an auto response/message so that the user knows that the form was successfully submitted. They were not fixed as I do not have a database capable of collecting data at the moment.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+What I Would Have Done Differently
+Git Add/Commit: I sometimes found myself lost on a mission and would realise that I should have done an add/commit sooner than I did, and then tried to remember what it was I had done! I also sometimes thought I’d committed something and realised a typo of some sort meant it didn’t go through, and I’d often have to kill of a terminal and restart and then have a commit taking both messages into account. Unfortunately, this is not something that can be fixed retrospectively, but it is something I am going to be more mindful of in future.
 
-------
+Deployment
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+In the GitHub repository, navigate to the Settings tab
+From the source section drop-down menu, select the Master Branch
+Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+The live link can be found here - https://mandyhole.github.io/love-a-lab/
+Credits:
+Content
+The content for this website drew on my personal experience of owning a Labrador Retriever and my training from trainers through the charity Dogs for Good.
 
-## Release History
+I also included several external links to reputable sources for more information that I think every potential owner should know, including:
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+PDSA
+The Kennel Club
+The Dogs Trust
+iframe code for Marley and Me Trailer: YouTube
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Quotes about dogs / labradors:
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Labrador Loving Soul
+Good Reads
+The Labrador Site
+Red Bubble website
+Code
+Hamburger style menu: Log Rocket
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Read More/ Read Less Button (used in Homepage About Me aside in mobile view): W3Schools
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Flexbox:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+YouTube
+W3Schools
+CSS Tricks
+CSS Grids:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+General concept for using Grids: W3Schools
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+Code for creating equal-width columns in CSS grid: CSS Tricks
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+Hero Animation (Page Headers): Code Institute Love Running source code
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+Slideshow for quotes: CSS Tricks
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+Media
+Images on Tips page: Pexels
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+Platform to create an ogg and mp3 versions of my mp4 file: Convertio
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+Chewy and Merriweather fonts used throughout the site: Google Fonts
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Icons used for my favicon, logo, homepage boxes and Pros/Cons boxes: Font Awesome
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Platform for inserting and creating a Favicon image: Favicon Generator
 
-------
+Platform for resizing images: Adobe PhotoShop
 
-## FAQ about the uptime script
+Platform for creating logo: Adobe Illustrator
 
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
+Application to create audio version only of my movie of a dog making snuffling sounds: Quicktime -->
