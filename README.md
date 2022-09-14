@@ -47,6 +47,9 @@ Once the player has responded to ten questions, they are taken to a screen with 
 <li><strong>Javascript: </strong>No errors were found passing through the <a href="https://jshint.com/" aria-label="W3C validator website - opens in new window" target="new">jshint validator.</a></li>
 </ul>
 
+### Colour contrast
+When initially selecting colours, I chose colours associated with football (green pitch, black/white ball, red card) and utilised <a href="https://webaim.org/resources/contrastchecker/" target="new" aria-label="WebAim Colour Checker website - opens in new window">WebAIM's colour contrast checker</a> to ensure the shades and combinations that I used on the site met AAA standards.
+
 ### Buttons
 
 ## Deployment
@@ -92,6 +95,9 @@ Formatting array in json file: https://www.w3schools.com/whatis/whatis_json.asp
 
 How to bring user to top of page:  // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp and https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
 
+Gif embed code: giphy.com
+
+Random number: //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 
 
 
@@ -129,66 +135,3 @@ HTML: No errors were returned when passing through the official W3C validator
 CSS: No errors were found when passing through the official (Jigsaw) validator
 Unfixed Bugs
 Form: The form submissions are currently set up to go to a form dump area on the Code Institute website. Ideally, these would be sent to my email so that I could respond accordingly, have reCAPTCHA functionality to weed out spam and an auto response/message so that the user knows that the form was successfully submitted. They were not fixed as I do not have a database capable of collecting data at the moment.
-
-What I Would Have Done Differently
-Git Add/Commit: I sometimes found myself lost on a mission and would realise that I should have done an add/commit sooner than I did, and then tried to remember what it was I had done! I also sometimes thought I’d committed something and realised a typo of some sort meant it didn’t go through, and I’d often have to kill of a terminal and restart and then have a commit taking both messages into account. Unfortunately, this is not something that can be fixed retrospectively, but it is something I am going to be more mindful of in future.
-
-Deployment
-The site was deployed to GitHub pages. The steps to deploy are as follows:
-In the GitHub repository, navigate to the Settings tab
-From the source section drop-down menu, select the Master Branch
-Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-The live link can be found here - https://mandyhole.github.io/love-a-lab/
-Credits:
-Content
-The content for this website drew on my personal experience of owning a Labrador Retriever and my training from trainers through the charity Dogs for Good.
-
-I also included several external links to reputable sources for more information that I think every potential owner should know, including:
-
-PDSA
-The Kennel Club
-The Dogs Trust
-iframe code for Marley and Me Trailer: YouTube
-
-Quotes about dogs / labradors:
-
-Labrador Loving Soul
-Good Reads
-The Labrador Site
-Red Bubble website
-Code
-Hamburger style menu: Log Rocket
-
-Read More/ Read Less Button (used in Homepage About Me aside in mobile view): W3Schools
-
-Flexbox:
-
-YouTube
-W3Schools
-CSS Tricks
-CSS Grids:
-
-General concept for using Grids: W3Schools
-
-Code for creating equal-width columns in CSS grid: CSS Tricks
-
-Hero Animation (Page Headers): Code Institute Love Running source code
-
-Slideshow for quotes: CSS Tricks
-
-Media
-Images on Tips page: Pexels
-
-Platform to create an ogg and mp3 versions of my mp4 file: Convertio
-
-Chewy and Merriweather fonts used throughout the site: Google Fonts
-
-Icons used for my favicon, logo, homepage boxes and Pros/Cons boxes: Font Awesome
-
-Platform for inserting and creating a Favicon image: Favicon Generator
-
-Platform for resizing images: Adobe PhotoShop
-
-Platform for creating logo: Adobe Illustrator
-
-Application to create audio version only of my movie of a dog making snuffling sounds: Quicktime -->

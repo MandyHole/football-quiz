@@ -168,6 +168,18 @@ li {
     text-align: left;
 }
 
+#question-options p {
+    line-height: 2.5rem;
+}
+
+/* https://stackoverflow.com/questions/4920281/how-to-change-the-size-of-the-radio-button-using-css */
+input[type="radio"] {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    transform: scale(1.5);
+    line-height: 2rem;
+  }
+
 #feedback-gif {
     grid-area: feedback-gif;
 }
@@ -250,3 +262,4 @@ footer {
         font-size: 1.25rem;
     }
 }
+

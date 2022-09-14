@@ -50,14 +50,14 @@ function runGame() {
         document.getElementById("question").textContent = randomElement.question;
         document.getElementById("question-options").innerHTML =
             `<form id="question-form" method="post">
-                <p><input type="radio" id="q1a" name="q1" value="${randomElement.a}" required="required">
-                <label for "q1a">${randomElement.a}</label><br>
-                <input type="radio"" id="q1b" name="q1" value="${randomElement.b}" required="required"> 
-                <label for "q1b">${randomElement.b}</label><br>
-                <input type="radio" id="q1c" name="q1" value="${randomElement.c}" required="required">
-                <label for "q1c">${randomElement.c}</label><br>
-                <input type="radio" id="q1d" name="q1" value="${randomElement.d}" required="required">
-                <label for "q1d">${randomElement.d}</label><br></p>
+                <p><input type="radio" id="${randomElement.a}" name="q1" value="${randomElement.a}" required="required">
+                <label for "${randomElement.a}">${randomElement.a}</label><br>
+                <input type="radio"" id="${randomElement.b}" name="q1" value="${randomElement.b}" required="required"> 
+                <label for "${randomElement.b}">${randomElement.b}</label><br>
+                <input type="radio" id="${randomElement.c}" name="q1" value="${randomElement.c}" required="required">
+                <label for "${randomElement.correct}">${randomElement.c}</label><br>
+                <input type="radio" id="${randomElement.d}" name="q1" value="${randomElement.d}" required="required">
+                <label for "${randomElement.a}">${randomElement.d}</label><br></p>
             <p><button type="button" id="submit-answer">Submit</button></p>
             </form>`;
             let footballForm = document.getElementById("submit-answer");
@@ -244,6 +244,7 @@ function showGoalGif() {
          ];
         var randomGoalGif = footballGoalGif[Math.floor(Math.random() * footballGoalGif.length)];
         document.getElementById("feedback-gif").style.display = "grid";
+        // embed code from giphy.com
         document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomGoalGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomGoalGif.giphyHref}">via GIPHY</a></p>`;
     }
 /**Show a gif of someone missing a goal when an incorrect answer is given*/
@@ -274,5 +275,6 @@ function showGoalGif() {
 
         var randomMissGif = footballMissGif[Math.floor(Math.random() * footballMissGif.length)];
         document.getElementById("feedback-gif").style.display = "grid";
+        // embed code from giphy.com
         document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomMissGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomMissGif.giphyHref}">via GIPHY</a></p>`;
     }
