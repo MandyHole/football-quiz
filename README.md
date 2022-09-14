@@ -24,7 +24,7 @@ The rules section at the top spells out clearly what the game's goal is. It disa
 A user gets randomly asked 10 questions generated from a javascript object of 50 possibilities. 
 
 ### Question Feedback
-Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They will see a gif of a professional footballer either scoring a great goal and/or looking happyp (if the answer is correct) or a gif of a professional missing an open goal and/or looking disappointed (if the answer is incorrect). They are then prompted to go to the next question.
+Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They will see a gif of a professional footballer either scoring a great goal and/or looking happy (if the answer is correct) or a gif of a professional missing an open goal and/or looking disappointed (if the answer is incorrect). They are then prompted to go to the next question.
 
 ### End of Game Feedback
 Once the player has responded to ten questions, they are taken to a screen with an analysis of their performance and encouragement to play again. A 'play again' button resets the game so players can easily start again without manually refreshing the page.
@@ -51,6 +51,7 @@ Once the player has responded to ten questions, they are taken to a screen with 
 When initially selecting colours, I chose colours associated with football (green pitch, black/white ball, red card) and utilised <a href="https://webaim.org/resources/contrastchecker/" target="new" aria-label="WebAim Colour Checker website - opens in new window">WebAIM's colour contrast checker</a> to ensure the shades and combinations that I used on the site met AAA standards.
 
 ### Buttons
+After testing, I realised that the button functions only ran properly if they were aligned with buttons already in the DOM (i.e., I couldn't just make them as temperal literals and have the functions run as required)
 
 ## Deployment
 The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -77,61 +78,27 @@ Clipart Image for Favicon/Logo: <a href="https://www.kindpng.com/imgv/TJJiT_png-
 
 Gifs: <a href="https://giphy.com/" target="new" aria-label="Giphy website - opens in a new window">Giphy website</a>
 
-Nunito font used throughout the site: Google Fonts https://fonts.google.com/
+Nunito font used throughout the site: <a href="https://fonts.google.com/" target="new" aria-label="Google Fonts website - opens in a new window">Google Fonts</a>
 
-Platform for inserting and creating a Favicon image: https://realfavicongenerator.net/
+Platform for inserting and creating a Favicon image: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
 
 Platform for creating logo: Adobe Illustrator
 
 ### Code
 
-Fix Manifest error appearing in console (from Favicon code): https://stackoverflow.com/questions/59068699/manifest-line-1-column-1-syntax-error
+Fix Manifest error appearing in console (from Favicon code):  <a href="https://stackoverflow.com/questions/59068699/manifest-line-1-column-1-syntax-error" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>
 
-Favicon: https://realfavicongenerator.net/
+Favicon Code: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
 
-Importing json file: https://bobbyhadz.com/blog/javascript-import-json-file
+Importing json file: <a href="https://bobbyhadz.com/blog/javascript-import-json-file" target="new" aria-label="Bobby Hadz website - opens in a new window">bobbyhadz.com</a> 
 
-Formatting array in json file: https://www.w3schools.com/whatis/whatis_json.asp
+Formatting array in json file: <a href="https://www.w3schools.com/whatis/whatis_json.asp" target="new" aria-label="w3Schools website - opens in a new window">w3Schools</a> 
 
-How to bring user to top of page:  // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp and https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
+How to bring user to top of page: <a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp" target="new" aria-label="w3Schools website - opens in a new window">w3Schools</a>
+ and <a href="https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a> 
 
-Gif embed code: giphy.com
+Gif embed code: <a href="https://giphy.com/" target="new" aria-label="Giphy website - opens in a new window">giphy.com website</a>
 
-Random number: //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
+Random number from Array: <a href="https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>   
 
-
-
-
-
-
-
-<!-- 
-Testing
-Layout:
-I originally designed the homepage using the theories taught in the course (using floats, display: none, column widths/heights). With a rather complicated design of double column intro and an aside, it was very difficult to look good without an unmanageable number of breakpoints; to have my content and photos line up, I had to give each div an arbitrary size, which meant that, depending on media widths, I would have had massive gaps between my columns. Also, I was having to have extra filler images appear or be hidden depending on how my content was split so there wasn’t a massive gap in a column. I also would have to check the height for various breakpoints to make sure the columns were the same size. Finally, as my aside appeared in the wrong place in the mobile view (under the qualifications intro), I then had to hide/show the original/duplicate depending on the media width. It was all very messy and complicated, and I knew there had to be a better way...
-
-Upon recommendation from my Mentor, I tried flex-box for my pros/cons page. Researching that also let me to grid css, which I implemented on my tips page. Both were remarkably easier to use, and my gaps between both pages were consistent and the pages looked much more professional. Upon reflection, I decided to redo my homepage with grid to ensure consistency in gaps/margins through the site. Unfortunately, doing it retrospectively caused a lot more effort and took a lot of experimentation to get it right, removing the extra divs, images and formatting that were no longer required.
-
-Hamburger menu:
-I discovered that this would not work properly if the user had already scrolled down the page. Working with my mentor, we discovered the heading needed to be fixed as opposed to sticky.
-
-Media queries:
-To make the site responsive, I went from three to two columns on both the home and Tips pages for a smaller screen/tablet, and then down again to a one column layout for mobile. For the pros/cons page, it went from a two column to a one column layout for mobile. I also had to add alternate mobile images for some background images to ensure that the dog’s face was shown.
-
-Consistency:
-As I reviewed the site, I realised that there was a bit of inconsistency in various elements across the site, which I sought to address by changing the inconsistent elements to be stylised by classes which I then implemented throughout the site, removing only elements that had to change (e.g., the background image on the hero) to be used in specific ids/classes. I used this approach for the headings, buttons, top hero area and form areas (and as I mentioned earlier, redoing the homepage to ensure consistency with row and column gaps/margins).
-
-Google Fonts:
-As I reviewed the deployed site on my mobile, I realised that it wasn't recognising the Google Chewy font family and instead used a cursive. I realised that the link to the Google fonts was at the bottom of the CSS file instead of the top so I moved it to the top, which fixed the issue. To be on the safe side, I also changed the alternative font family to serif instead of cursive in case a font rendering issues happened to occur.
-
-Incorrectly sized image and missing description:
-As I reviewed the site using Lighthouse, I realised one image was sized to 4000px (I meant to do 400px) which slowed down the website as it was 1.7MB. I resized the image to 300px. I also realised that it wasn't picking up the meta description for the Tips page due to a typo so I fixed that.
-
-Colour contrast:
-When initially selecting colours, I utilised WebAIM's colour contrast checker to ensure the background colours I used were suitable for dark colour text at a normal size. I then found the lightest black shade I could that still met AAA standards for normal text to use as my main font colour. I put the blue/yellow combination into a colour wheel to find a complementary third colour: a shade of magenta pink. As it did not meet colour contrast standards for text, I used it solely for decoration.
-
-Validator Testing
-HTML: No errors were returned when passing through the official W3C validator
-CSS: No errors were found when passing through the official (Jigsaw) validator
-Unfixed Bugs
-Form: The form submissions are currently set up to go to a form dump area on the Code Institute website. Ideally, these would be sent to my email so that I could respond accordingly, have reCAPTCHA functionality to weed out spam and an auto response/message so that the user knows that the form was successfully submitted. They were not fixed as I do not have a database capable of collecting data at the moment.
+Increase size of radio buttons: <a href="https://stackoverflow.com/questions/4920281/how-to-change-the-size-of-the-radio-button-using-css" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>

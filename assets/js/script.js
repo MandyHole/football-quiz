@@ -55,9 +55,9 @@ function runGame() {
                 <input type="radio"" id="${randomElement.b}" name="q1" value="${randomElement.b}" required="required"> 
                 <label for "${randomElement.b}">${randomElement.b}</label><br>
                 <input type="radio" id="${randomElement.c}" name="q1" value="${randomElement.c}" required="required">
-                <label for "${randomElement.correct}">${randomElement.c}</label><br>
+                <label for "${randomElement.c}">${randomElement.c}</label><br>
                 <input type="radio" id="${randomElement.d}" name="q1" value="${randomElement.d}" required="required">
-                <label for "${randomElement.a}">${randomElement.d}</label><br></p>
+                <label for "${randomElement.d}">${randomElement.d}</label><br></p>
             <p><button type="button" id="submit-answer">Submit</button></p>
             </form>`;
             let footballForm = document.getElementById("submit-answer");
