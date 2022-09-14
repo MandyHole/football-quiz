@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /** Activated when user clicks submit
  * Calculate answer and league. Add 1 to attempts
- * End game if attempts = 10*/    
+ * End game if attempts = 10
+ * Hide rules area and show button to see rules again
+ * Display next question box (if attempts <10)*/    
 function submitAnswer() {
     calculateAnswer();
     calculateLeague();
@@ -32,16 +34,13 @@ function submitAnswer() {
     }
 }
 
-/**
- * Insert random question / submit button
- * set "feedback-gif" to none
- */
-
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
 
-
-
+/**
+ * Insert random question / submit button
+ * Hide unneccessary elements
+ */
 function runGame() {
     randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
         document.getElementById("feedback-gif").style.display = "none";
@@ -64,6 +63,13 @@ function runGame() {
             let footballForm = document.getElementById("submit-answer");
             footballForm.addEventListener('click', submitAnswer);
             footballForm.addEventListener('click', handleSubmit);
+            let footballFormWhole = document.getElementById("question-form");
+            footballFormWhole.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                  submitAnswer();
+                  handleSubmit();
+                }
+            });
         
         }
 
