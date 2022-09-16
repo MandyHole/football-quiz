@@ -706,4 +706,4 @@ getResults.addEventListener('click', endGame);
 getResults.addEventListener('click', handleSubmit);
 
 let playAgainButton = document.getElementById("play-again-button");
-showRulesButton.addEventListener('click', playAgain);
+playAgainButton.addEventListener('click', playAgain);
