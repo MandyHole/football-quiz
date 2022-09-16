@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap');
 
@@ -5,7 +12,8 @@
     padding: 0;
     margin: 0;
     border: none;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -51,13 +59,17 @@ li {
 
 /* Tally grid */
 #tally-grid {
+    display: -ms-grid;
     display: grid;
     width: 100%;
+    -ms-grid-columns: minmax(0, 1fr) 15px minmax(0, 1fr) 15px minmax(0, 1fr);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-    grid-template-areas:
+        grid-template-areas:
         "score-area attempts-area league-area";
-    align-items: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     background-color: #1a5929;
 }
 
@@ -69,14 +81,20 @@ li {
 }
 
 #score-area {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: score-area;
 }
 
 #attempts-area {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
     grid-area: attempts-area;
 }
 
 #league-area {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
     grid-area: league-area;
 }
 
@@ -93,8 +111,10 @@ li {
     font-size: 2rem;
     text-align: center;
     padding: 1%;
-    margin-block-start: 0.2em;
-    margin-block-end: 0;
+    -webkit-margin-before: 0.2em;
+            margin-block-start: 0.2em;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
 }
 
 #rules>p {
@@ -102,8 +122,10 @@ li {
     font-size: 1.2rem;
     text-align: center;
     padding: 0 10% 1% 10%;
-    margin-block-start: 0.4em;
-    margin-block-end: 0.4em;
+    -webkit-margin-before: 0.4em;
+            margin-block-start: 0.4em;
+    -webkit-margin-after: 0.4em;
+            margin-block-end: 0.4em;
 }
 
 /* Final message section */
@@ -140,17 +162,24 @@ li {
 }
 
 #question-grid-area {
+    display: -ms-grid;
     display: grid;
     width: 80%;
     margin: 20px auto;
+    -ms-grid-columns: minmax(0, 1fr) 15px minmax(0, 1fr) 15px minmax(0, 1fr);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-    grid-template-areas:
+        grid-template-areas:
         "question-box question-box feedback-gif";
-    align-items: stretch;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
 }
 
 #question-box {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
     grid-area: question-box;
 }
 
@@ -180,6 +209,8 @@ input[type="radio"] {
   }
 
 #feedback-gif {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
     grid-area: feedback-gif;
 }
 #feedback-gif > p {
@@ -228,17 +259,21 @@ footer {
 /* media queries */
 @media screen and (max-width: 700px) {
     #tally-grid {
-        grid-template-areas:
+        -ms-grid-rows: auto 0 auto;
+            grid-template-areas:
             "score-area attempts-area"
             "league-area league-area";
+        -ms-grid-columns: minmax(0, 1fr) 0 minmax(0, 1fr);
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0;
     }
 
     #question-grid-area {
-        grid-template-areas:
+        -ms-grid-rows: auto .5rem auto;
+            grid-template-areas:
             "question-box"
             "feedback-gif";
+        -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: .5rem 0;
     }
@@ -260,5 +295,28 @@ footer {
     #question-box li {
         font-size: 1.25rem;
     }
-}
+    #score-area {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    #attempts-area {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+    #league-area {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+    }
 
+    #question-box {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    #feedback-gif {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+}
