@@ -90,9 +90,12 @@ Fix Manifest error appearing in console (from Favicon code):  <a href="https://s
 
 Favicon Code: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
 
-Importing json file: <a href="https://bobbyhadz.com/blog/javascript-import-json-file" target="new" aria-label="Bobby Hadz website - opens in a new window">bobbyhadz.com</a> 
+Importing json file (ultimately not used): <a href="https://bobbyhadz.com/blog/javascript-import-json-file" target="new" aria-label="Bobby Hadz website - opens in a new window">bobbyhadz.com</a> 
 
-Formatting array in json file: <a href="https://www.w3schools.com/whatis/whatis_json.asp" target="new" aria-label="w3Schools website - opens in a new window">w3Schools</a> 
+Formatting array in json file (ultimately not used): <a href="https://www.w3schools.com/whatis/whatis_json.asp" target="new" aria-label="w3Schools website - opens in a new window">w3Schools</a> 
+
+Get value from selected radio button: <a href="https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>  
+
 
 How to bring user to top of page: <a href="https://www.w3schools.com/howto/howto_js_scroll_to_top.asp" target="new" aria-label="w3Schools website - opens in a new window">w3Schools</a>
  and <a href="https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a> 
@@ -102,3 +105,5 @@ Gif embed code: <a href="https://giphy.com/" target="new" aria-label="Giphy webs
 Random number from Array: <a href="https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>   
 
 Increase size of radio buttons: <a href="https://stackoverflow.com/questions/4920281/how-to-change-the-size-of-the-radio-button-using-css" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>
+
+Check for vendor prefixes: <a href="https://autoprefixer.github.io/" target="new" aria-label="Autoprefixer CSS online  website - opens in a new window">Autoprefixer CSS online</a>

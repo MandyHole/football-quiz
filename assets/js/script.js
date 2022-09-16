@@ -412,7 +412,7 @@ const footballQuestions = [{
         d: "Jamie Vardy",
         correct: "Wayne Rooney"
     }
-]
+];
 
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
@@ -569,25 +569,25 @@ function endGame() {
     document.getElementById("final-message").style.display = "block";
     if (score < 2) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score} and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance? </p><form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score} and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 4) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to League 2. Why not play again to see if you can advance even further? </p><form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to League 2. Why not play again to see if you can advance even further? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 6) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to League 1. Why not play again to see if you can advance even further? </p><form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to League 1. Why not play again to see if you can advance even further? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 8) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further? </p><form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message medium">Out of your 10 attempts to score, you managed to convert ${score}. Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 10) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?</p> <form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message good">What a game! Out of your 10 attempts, you scored ${score} times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?</p> <form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 11) {
         document.getElementById("final-message").innerHTML =
-            `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title? </p><form><button onclick="playAgain()">Play Again</button></form>`;
+            `<p class="final-message good">Wow - you scored on all 10 attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else {
         document.getElementById("final-message").innerHTML =
-            `Game over due to suspected cheating. Your score can't be more than 10: ${score} <form><button onclick="playAgain()">Play Again</button></form>`;
+            `Game over due to suspected cheating. Your score can't be more than 10: ${score} <form><button id="play-again-button">Play Again</button></form>`;
         throw `Too many goals: ${score}`;
     }
 }
@@ -704,3 +704,6 @@ showRulesButton.addEventListener('click', showRules);
 let getResults = document.getElementById("get-results");
 getResults.addEventListener('click', endGame);
 getResults.addEventListener('click', handleSubmit);
+
+let playAgainButton = document.getElementById("play-again-button");
+showRulesButton.addEventListener('click', playAgain);
