@@ -7,7 +7,7 @@ This is a quiz to test football fans' general knowledge of the sport; quiz playe
 ## Existing Features
 
 ### Favicon
-The favicon is the same image that is used in the logo to add consistency across the site. It also makes it very clear that this is a football-related website.
+<img src="favicon2.ico" alt="a realistically drawn football"> The favicon is the same image that is used in the logo to add consistency across the site. It also makes it very clear that this is a football-related website.
 
 ### Header
 The header makes it clear what the website is. It is 80% width to line up with the content and be responsive across devices
@@ -16,18 +16,37 @@ The header makes it clear what the website is. It is 80% width to line up with t
 
 ### Score tally
 A band across the top of the website shows the player how many answers they have had correct, how many attempts they've had (i.e., how many questions they have answered) and what their current league status is. This is optimised for mobile with the league dropping to the next line.
+#### Desktop view
+<img src="assets/readme-images/tally.png" alt="Tally in desktop view">
+
+#### Mobile view
+<img src="assets/readme-images/tally-mobile.png" alt="Tally in mobile view">
+
+
 
 ### Rules
 The rules section at the top spells out clearly what the game's goal is. It disappears once the first answer is submitted to keep the page cleaner, but there is a button at the bottom of the page to make it reappear if a user wishes. It will subsequently disappear again once the user goes onto submit another answer or views the next question at which time the button reappears at the bottom of the page so a player can make the rules reappear at any point.
 
+<img src="assets/readme-images/rules.png" alt="Rules in mobile view">
+<img src="assets/readme-images/rules-button.png" alt="Rules button">
+
+
+
 ### Questions
-A user gets randomly asked 10 questions generated from a javascript object of 50 possibilities. 
+A user gets randomly asked 10 questions generated from a javascript object nested in an array of 50 possibilities.
+
+<img src="assets/readme-images/question.png" alt="Sample question">
 
 ### Question Feedback
 Once a user submits their response to the question, they get immediate feedback saying whether their answer was correct or incorrect whilst also providing the question and the correct answer for clarity to promote the likelihood that they will retain this information in future attempts. They will see a gif of a professional footballer either scoring a great goal and/or looking happy (if the answer is correct) or a gif of a professional missing an open goal and/or looking disappointed (if the answer is incorrect). They are then prompted to go to the next question.
 
+<img src="assets/readme-images/feedback.png" alt="Example of feedback after an answer is submitted">
+
 ### End of Game Feedback
 Once the player has responded to ten questions, they are taken to a screen with an analysis of their performance and encouragement to play again. A 'play again' button resets the game so players can easily start again without manually refreshing the page.
+
+<img src="assets/readme-images/final-feedback.png" alt="Example of feedback after the game is over">
+
 
 ## Future Features to Implement
 <ul>
@@ -53,13 +72,19 @@ When initially selecting colours, I chose colours associated with football (gree
 ### Buttons
 After testing, I realised that the button functions only ran properly if they were aligned with buttons already in the DOM (i.e., I couldn't just make them as temperal literals and have the functions run as required)
 
+### Browsers
+After deploying the site, I realised that the javascript file was only being read in Chrome, and it didn't work in Safari or Samsung Internet Browser. Upon testing, I discovered the issue was with the json file which held the Football Questions/Answers. Putting the array back in the script file fixed the problem so the website can be enjoyed across browsers.
+
+### Favicon
+I noticed that some websites were picking up the favicon for my last github project instead of the one specified even when the cache was cleared. I changed the filename to favicon2.ico, which fixed this.
+
 ## Deployment
 The site was deployed to GitHub pages. The steps to deploy are as follows:
 <ol><li>In the GitHub repository, navigate to the Settings tab</li>
 <li>From the source section drop-down menu, select the Master Branch</li>
 <li>Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.</li>
 </ol>
-The live link can be found here - https://mandyhole.github.io/football-quiz
+The live link can be found here - <a href="https://mandyhole.github.io/football-quiz" target="new" aria-label="Football quiz website - opens in a new window">https://mandyhole.github.io/football-quiz</a>
 
 ## Credits
 
@@ -86,9 +111,9 @@ Platform for creating logo: Adobe Illustrator
 
 ### Code
 
-Fix Manifest error appearing in console (from Favicon code):  <a href="https://stackoverflow.com/questions/59068699/manifest-line-1-column-1-syntax-error" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>
+Fix Manifest error appearing in console (from Favicon code - ultimately unused as icons weren't showing up):  <a href="https://stackoverflow.com/questions/59068699/manifest-line-1-column-1-syntax-error" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>
 
-Favicon Code: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
+Favicon Code - ultimately unused as icons weren't showing up as previous project icon was showing in deployed site: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
 
 Importing json file (ultimately not used): <a href="https://bobbyhadz.com/blog/javascript-import-json-file" target="new" aria-label="Bobby Hadz website - opens in a new window">bobbyhadz.com</a> 
 
