@@ -1,7 +1,53 @@
 // https://bobbyhadz.com/blog/javascript-import-json-file
 
-import myJson from './data.json' assert {type: 'json'};
-const footballQuestions = myJson;
+// import myJson from './data.json' assert {type: 'json'};
+// const footballQuestions = myJson;
+const footballQuestions =
+[{  id: 1,
+    question: "When is the FA Cup typically held?",
+    a: "The Saturday after the Premier League season finishes in May",
+    b: "The Sunday after the Premier League season finishes in May",
+   c: "The second Saturday after the Premier League season finishes in May",
+    d: "The second Sunday after the Premier League season finishes in May",
+    correct: "The Saturday after the Premier League season finishes in May"
+},
+{
+    id: 2,
+    question: "Which country was the first to host the World Cup for a second time?",
+    a: "France",
+    b: "Italy",
+   c: "Mexico",
+    d: "Uruguay",
+    correct: "Mexico"
+
+},
+{
+    id: 3,
+    question: "Who was the 1966 World Cup winning captain?",
+    a: "Bobby Charlton",
+    b: "Geoff Hurst",
+   c: "Martin Peters",
+    d: "Bobby Moore",
+    correct: "Bobby Moore"
+},
+{
+    id: 4,
+    question: "Who did FIFA name as Football Coach of the Century in 1999?",
+    a: "Mario Zagollo",
+    b: "Rinus Michels",
+   c: "Matt Busby",
+    d: "Sir Alex Ferguson",
+    correct: "Rinus Michels"
+},
+{
+    id: 5,
+    question: "For how many years was Sir Alex Ferguson in charge of Manchester United F.C.?",
+    a: "18 years",
+    b: "21 years",
+   c: "23 years",
+    d: "26 years",
+    correct: "26 years"
+}]
 
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
