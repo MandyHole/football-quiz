@@ -423,6 +423,9 @@ const finalMessageArea = document.getElementById("final-message")
 const questionOptionsArea = document.getElementById("question-options")
 const leagueArea = document.getElementById("league")
 const tallyGrid = document.getElementById("tally-grid")
+const questionArea = document.getElementById("question-grid-area");
+const footerArea = document.getElementById("footer-area");
+
 
 
 
@@ -434,6 +437,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // runGame();
     showRulesButton.style.display = "none";
     tallyGrid.style.display = "none";
+    rulesArea.style.display = "none";
+    feedbackGifArea.style.display = "none";
+    finalMessageArea.style.display = "none";
+    getResultsButton.style.display = "none";
+    nextQuestionArea.style.display = "none";
+    document.body.style.backgroundImage = "url('../images/football-background.jpg')";
+    // document.body.style.backgroundColor = "black";
+    
+    questionArea.style.display = "none";
+    footerArea.style.display = "none";
+
+
 });
 
 function submitUsername() {
@@ -442,6 +457,10 @@ function submitUsername() {
         let userNameBox = document.getElementById("enter-username-box");
         userNameBox.style.display = "none";
         tallyGrid.style.display = "grid";
+        rulesArea.style.display = "block";
+        questionArea.style.display = "block";
+        footerArea.style.display = "block";
+
         runGame();
     }
 }
