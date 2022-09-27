@@ -320,3 +320,29 @@ footer {
         -ms-grid-column: 1;
     }
 }
+
+
+#enter-username-box {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10.2, 34.9, 16.1, .9);
+
+}
+
+#enter-username {
+    background-color: #fff;
+    margin: 3rem auto;
+    padding: 2rem;
+    width: 80%;
+    border-radius: 5px;
+}
+#enter-username > input {
+    background-color: lightgray;
+    line-height: 2rem;
+    width: 80%;
+    color: darkslategray;
+    border: 1px solid lightslategray;
+}
