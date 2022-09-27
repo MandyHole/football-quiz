@@ -460,8 +460,11 @@ function submitUsername() {
         rulesArea.style.display = "block";
         questionArea.style.display = "block";
         footerArea.style.display = "block";
-
         runGame();
+    
+    } else {
+        let errorMessage = document.getElementById("username-error-message");
+        errorMessage.textContent = "Please provide a username before playing."
     }
 }
 
