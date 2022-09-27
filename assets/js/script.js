@@ -575,7 +575,6 @@ function calculateLeague() {
  * Add button to play again
  */
 function endGame() {
-    console.log("endgame");
     // https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
     scroll(0, 0);
     let score = parseInt(document.getElementById("score").innerText);
@@ -714,13 +713,18 @@ function showMissGif() {
 }
 
 let nextQuestionButton = document.getElementById("next-question");
-nextQuestionButton.addEventListener('click', runGame);
-nextQuestionButton.addEventListener('click', handleSubmit);
-nextQuestionButton.addEventListener('click', hideRules);
+
+nextQuestionButton.addEventListener('click',() => {    
+    runGame();
+    handleSubmit();
+    hideRules();    
+});
+// nextQuestionButton.addEventListener('click', runGame);
+// nextQuestionButton.addEventListener('click', handleSubmit);
+// nextQuestionButton.addEventListener('click', hideRules);
 
 let qform = document.getElementById('next-question-button')
 qform.addEventListener("keydown", function (event) {
-    console.log(event, "<===e on next")
     if (event.key === "Enter") {
         runGame();
         handleSubmit();
@@ -732,8 +736,12 @@ qform.addEventListener("keydown", function (event) {
 
 showRulesButton.addEventListener('click', showRules);
 
-getResultsButton.addEventListener('click', endGame);
-getResultsButton.addEventListener('click', handleSubmit);
+getResultsButton.addEventListener('click',() => {    
+    endGame();
+    handleSubmit();    
+});
+// getResultsButton.addEventListener('click', endGame);
+// getResultsButton.addEventListener('click', handleSubmit);
 
 let playAgainButton = document.getElementById("play-again-button");
 playAgainButton.addEventListener('click', playAgain);
