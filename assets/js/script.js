@@ -414,14 +414,24 @@ const footballQuestions = [{
 }
 ];
 
-const rulesArea =  document.getElementById("rules")
+const rulesArea =  document.getElementById("rules");
+const feedbackGifArea = document.getElementById("feedback-gif");
+const showRulesButton = document.getElementById("show-rules");
+const nextQuestionArea = document.getElementById("next-question-box")
+const getResultsButton = document.getElementById("get-results")
+const finalMessageArea = document.getElementById("final-message")
+const questionOptionsArea = document.getElementById("question-options")
+const leagueArea = document.getElementById("league")
+
+
+
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
 
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
     runGame();
-    document.getElementById("show-rules").style.display = "none";
+    showRulesButton.style.display = "none";
 });
 
 /** Activated when user clicks submit
@@ -434,18 +444,18 @@ function submitAnswer() {
     calculateLeague();
     addAttempt();
     rulesArea.style.display = "none";
-    document.getElementById("show-rules").style.display = "block";
+    showRulesButton.style.display = "block";
     let attempts = parseInt(document.getElementById("attempts").textContent);
     if (attempts == 10) {
-        document.getElementById("next-question-box").style.display = "none";
-        document.getElementById("get-results").style.display = "block";
+        nextQuestionArea.style.display = "none";
+        getResultsButton.style.display = "block";
     } else if (attempts > 10) {
-        document.getElementById("final-message").style.display = "block";
-        document.getElementById("final-message").innerHTML =
+        finalMessageArea.style.display = "block";
+        finalMessageArea.innerHTML =
             `You have had too many attempts (more than 10): ${attempts}. <form><button type="button">Play Again</button></form>`;
         throw `Too many attempts: ${attempts}`;
     } else {
-        document.getElementById("next-question-box").style.display = "block";
+        nextQuestionArea.style.display = "block";
     }
 }
 
@@ -456,12 +466,14 @@ function submitAnswer() {
 function runGame(e) {
 
     randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
-    document.getElementById("feedback-gif").style.display = "none";
-    document.getElementById("final-message").style.display = "none";
-    document.getElementById("get-results").style.display = "none";
-    document.getElementById("next-question-box").style.display = "none";
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    feedbackGifArea.style.display = "none";
+    finalMessageArea.style.display = "none";
+    getResultsButton.style.display = "none";
+    nextQuestionArea.style.display = "none";
     document.getElementById("question").textContent = randomElement.question;
-    document.getElementById("question-options").innerHTML =
+    questionOptionsArea.innerHTML =
         `<form id="question-form" method="post">
                 <p><input type="radio" id="${randomElement.a}" name="q1" value="${randomElement.a}" required="required">
                 <label for "${randomElement.a}">${randomElement.a}</label><br>
@@ -495,16 +507,15 @@ function runGame(e) {
  */
 function calculateAnswer() {
     let correctAnswer = randomElement.correct;
-    console.log(correctAnswer, "correct");
     let selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     if (correctAnswer == selectedAnswer) {
         addScore();
         showGoalGif();
-        document.getElementById("question-options").innerHTML =
+        questionOptionsArea.innerHTML =
             `<h3 class="feedback miss-feedback">Well done, you scored! You chose the correct answer: ${randomElement.correct}.</h3>`;
     } else {
-        document.getElementById("question-options").innerHTML =
+        questionOptionsArea.innerHTML =
             `<h3 class="feedback miss-feedback">Oh no - you missed! The correct answer is ${randomElement.correct}.</h3>`;
         showMissGif();
     }
@@ -516,12 +527,12 @@ function showRules() {
     // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    document.getElementById("show-rules").style.display = "none";
+    showRulesButton.style.display = "none";
 }
 /** Hide rules and show button*/
 function hideRules() {
     rulesArea.style.display = "none";
-    document.getElementById("show-rules").style.display = "block";
+    showRulesButton.style.display = "block";
 }
 /**
  * add one to score
@@ -543,17 +554,17 @@ function addAttempt() {
 function calculateLeague() {
     let score = parseInt(document.getElementById("score").innerText);
     if (score === 2 || score === 3) {
-        document.getElementById("league").innerText = "League 2";
+        leagueArea.innerText = "League 2";
     } else if (score === 4 || score === 5) {
-        document.getElementById("league").innerText = "League 1";
+        leagueArea.innerText = "League 1";
     } else if (score === 6 || score === 7) {
-        document.getElementById("league").innerText = "Championship";
+        leagueArea.innerText = "Championship";
     } else if (score === 8 || score === 9) {
-        document.getElementById("league").innerText = "Premier League";
+        leagueArea.innerText = "Premier League";
     } else if (score === 10) {
-        document.getElementById("league").innerText = "Champions League";
+        leagueArea.innerText = "Champions League";
     } else {
-        document.getElementById("league").innerText = "Grassroots";
+        leagueArea.innerText = "Grassroots";
     }
 }
 
@@ -566,18 +577,14 @@ function endGame() {
     // https://stackoverflow.com/questions/4147112/how-to-jump-to-top-of-browser-page
     scroll(0, 0);
     let score = parseInt(document.getElementById("score").innerText);
-    document.getElementById("feedback-gif").style.display = "none";
+    feedbackGifArea.style.display = "none";
     document.getElementById("question-box").style.display = "none";
     rulesArea.style.display = "none";
-    document.getElementById("final-message").style.display = "block";
+    finalMessageArea.style.display = "block";
     if (score == 0) {
         displayFinalMessage("poor", "Out of your 10 attempts to score, you weren't able to convert any and so have ", "points. You are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can do better?")
-        // finalMessage.innerHTML =
-        //     `<p class="final-message poor">Out of your 10 attempts to score, you weren't able to convert any and so have ${score} points. You are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can do better? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 2) {
         displayFinalMessage("poor", "Out of your 10 attempts to score, you only managed to convert ", "and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance?")
-        // finalMessage.innerHTML =
-            // `<p class="final-message poor">Out of your 10 attempts to score, you only managed to convert ${score} and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance? </p><form><button id="play-again-button">Play Again</button></form>`;
     } else if (score < 4) {
         displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 2. Why not play again to see if you can advance even further?")
     } else if (score < 6) {
@@ -595,7 +602,7 @@ function endGame() {
 }
 function displayFinalMessage(class3, text1, text2) {
     let score = parseInt(document.getElementById("score").innerText);
-    document.getElementById("final-message").innerHTML = 
+    finalMessageArea.innerHTML = 
     `<p class="final-message ${class3}">${text1} ${score} ${text2}</p> <form><button id="play-again-button">Play Again</button></form>`
 }
 
@@ -609,9 +616,9 @@ function displayFinalMessage(class3, text1, text2) {
 function playAgain() {
     document.getElementById("attempts").innerText = 0;
     document.getElementById("score").innerText = 0;
-    document.getElementById("league").innerText = "Grassroots";
-    document.getElementById("feedback-gif").style.display = "none";
-    document.getElementById("final-message").style.display = "none";
+    leagueArea.innerText = "Grassroots";
+    feedbackGifArea.style.display = "none";
+    finalMessageArea.style.display = "none";
     rulesArea.style.display = "block";
     runGame();
 }
@@ -659,9 +666,9 @@ function showGoalGif() {
     },
     ];
     var randomGoalGif = footballGoalGif[Math.floor(Math.random() * footballGoalGif.length)];
-    document.getElementById("feedback-gif").style.display = "grid";
+    feedbackGifArea.style.display = "grid";
     // embed code from giphy.com
-    document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomGoalGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomGoalGif.giphyHref}">via GIPHY</a></p>`;
+    feedbackGifArea.innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomGoalGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomGoalGif.giphyHref}">via GIPHY</a></p>`;
 }
 /**Show a gif of someone missing a goal when an incorrect answer is given*/
 function showMissGif() {
@@ -699,9 +706,9 @@ function showMissGif() {
     },
     ];
     var randomMissGif = footballMissGif[Math.floor(Math.random() * footballMissGif.length)];
-    document.getElementById("feedback-gif").style.display = "grid";
+    feedbackGifArea.style.display = "grid";
     // embed code from giphy.com
-    document.getElementById("feedback-gif").innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomMissGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomMissGif.giphyHref}">via GIPHY</a></p>`;
+    feedbackGifArea.innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomMissGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomMissGif.giphyHref}">via GIPHY</a></p>`;
 }
 
 let nextQuestionButton = document.getElementById("next-question");
@@ -721,12 +728,10 @@ qform.addEventListener("keydown", function (event) {
 
 
 
-let showRulesButton = document.getElementById("show-rules");
 showRulesButton.addEventListener('click', showRules);
 
-let getResults = document.getElementById("get-results");
-getResults.addEventListener('click', endGame);
-getResults.addEventListener('click', handleSubmit);
+getResultsButton.addEventListener('click', endGame);
+getResultsButton.addEventListener('click', handleSubmit);
 
 let playAgainButton = document.getElementById("play-again-button");
 playAgainButton.addEventListener('click', playAgain);
