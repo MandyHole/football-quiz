@@ -494,7 +494,7 @@ function runGame(e) {
     footballFormWhole.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             submitAnswer();
-            handleSubmit();
+            // handleSubmit();
         }
     });
 
@@ -624,9 +624,9 @@ function playAgain() {
     runGame();
 }
 /**Prevent forms from refreshing page */
-function handleSubmit(event) {
-     event.preventDefault();
-}
+// function handleSubmit(event) {
+//      event.preventDefault();
+// }
 /**Show a gif of a goal when correct answer is given*/
 function showGoalGif() {
     let footballGoalGif = [{
@@ -727,7 +727,7 @@ let qform = document.getElementById('next-question-button')
 qform.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         runGame();
-        handleSubmit();
+        // handleSubmit();
         hideRules()
     }
 });
@@ -738,7 +738,7 @@ showRulesButton.addEventListener('click', showRules);
 
 getResultsButton.addEventListener('click',() => {    
     endGame();
-    handleSubmit();    
+    // handleSubmit();    
 });
 // getResultsButton.addEventListener('click', endGame);
 // getResultsButton.addEventListener('click', handleSubmit);
