@@ -30,20 +30,20 @@
                 <p class="tally-text">League: <span id="league">Grassroots</span></p>
             </div>
         </div>
-        <div class="scroll-left" id="scrolling-text"><p>Breaking news: football match is kicking off soon!</p>
+        <div class="scroll-left" id="scrolling-text"><p>BREAKING NEWS: football match is kicking off soon!</p>
         </div>
     </header>
-    
-<section id="enter-username-box"><form id="enter-username"><h2>Kick Off Your Game</h2><label for="input-username">To play this game that tests your football knowledge, please first give your name: </label><input type="text" id="input-username" autofocus required><button type="button" id="submit-username">Let's play!</button><div id="username-error-message"></div></form>
+    <!-- https://stackoverflow.com/questions/2215462/html-form-when-i-hit-enter-it-refreshes-page -->
+<section id="enter-username-box"><form id="enter-username" onSubmit="return false;"><h2>Kick Off Your Game</h2><label for="input-username">To play this game that tests your football knowledge, please first give your name: </label><input type="text" id="input-username" autofocus required><button type="button" id="submit-username">Let's play!</button><div id="username-error-message"></div></form>
 </section>
 <!-- <div class="scroll-left" id="final-result-scroll"><p>Scrolling text</p>
 </div> -->
 
     <section id="rules">
         <h2>Rules of the Game:</h2>
-        <p>You will be asked 10 questions testing your football general knowledge. For every two correct answers, you
+        <p><span id="user-provided-name"></span>, you will be asked 10 questions testing your football general knowledge. For every two correct answers, you
             advance up a league: League 2, League 1, Championship, Premier League, Champions League. Can you make it to
-            the Champions League?</p>
+            the Champions League? </p>
     </section>
     <div id="final-message">
         <p class="poor">x </p>

@@ -417,15 +417,15 @@ const footballQuestions = [{
 const rulesArea = document.getElementById("rules");
 const feedbackGifArea = document.getElementById("feedback-gif");
 const showRulesButton = document.getElementById("show-rules");
-const nextQuestionArea = document.getElementById("next-question-box")
-const getResultsButton = document.getElementById("get-results")
-const finalMessageArea = document.getElementById("final-message")
-const questionOptionsArea = document.getElementById("question-options")
-const leagueArea = document.getElementById("league")
-const tallyGrid = document.getElementById("tally-grid")
+const nextQuestionArea = document.getElementById("next-question-box");
+const getResultsButton = document.getElementById("get-results");
+const finalMessageArea = document.getElementById("final-message");
+const questionOptionsArea = document.getElementById("question-options");
+const leagueArea = document.getElementById("league");
+const tallyGrid = document.getElementById("tally-grid");
 const questionArea = document.getElementById("question-grid-area");
 const footerArea = document.getElementById("footer-area");
-const scrollingText = document.getElementById("scrolling-text")
+const scrollingText = document.getElementById("scrolling-text");
 
 
 
@@ -445,12 +445,19 @@ document.addEventListener("DOMContentLoaded", function () {
     nextQuestionArea.style.display = "none";    
     questionArea.style.display = "none";
     footerArea.style.display = "none";
+    let usernameForm = document.getElementById("enter-username");
+    usernameForm.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        submitUsername();
+    }
+});
 
 
 });
 
 function submitUsername() {
-    console.log("trying to submit")
+    var userProvidedName = document.getElementById("input-username").value;
+    console.log(userProvidedName)
     if (document.getElementById("input-username").value !== "") {
         let userNameBox = document.getElementById("enter-username-box");
         userNameBox.style.display = "none";
@@ -460,6 +467,8 @@ function submitUsername() {
         footerArea.style.display = "block";
         document.body.style.background = "none";
         scrollingText.style.display = "none";
+        let insertUserName = document.getElementById("user-provided-name");
+        insertUserName.textContent = userProvidedName;
 
         runGame();
     
@@ -530,7 +539,6 @@ function runGame(e) {
     footballFormWhole.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             submitAnswer();
-            // handleSubmit();
         }
     });
 
@@ -768,6 +776,9 @@ qform.addEventListener("keydown", function (event) {
         hideRules()
     }
 });
+
+
+
 
 
 
