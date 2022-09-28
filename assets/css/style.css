@@ -18,7 +18,7 @@
 
 body {
     margin: 0;
-    /* background-image: url(../images/football-background.jpg); */
+    background-image: url(../images/football-background3.jpg);
 }
 
 button {
@@ -57,6 +57,42 @@ li {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
 }
+
+/* Scrolling text */
+/* https://www.html.am/html-codes/marquees/html-scrolling-text.cfm */
+
+.scroll-left {
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+    background: #EEFF00;
+    color: #000;
+    border: 1px solid #000;
+   }
+   .scroll-left p {
+    position: absolute;
+    font-weight: 800;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 20s linear infinite;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+   }
+
 
 /* Tally grid */
 #tally-grid {
@@ -159,7 +195,7 @@ li {
 
 #question {
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
 }
 
 #question-grid-area {
@@ -346,4 +382,15 @@ footer {
     width: 80%;
     color: darkslategray;
     border: 1px solid lightslategray;
+    margin: 2rem auto 0 0;
+    padding: 0 20px;
+}
+#enter-username > h2 {
+    color: #1a5929;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+#enter-username > button {
+    margin: 1rem 0;
 }

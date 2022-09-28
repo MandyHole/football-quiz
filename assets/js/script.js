@@ -425,6 +425,7 @@ const leagueArea = document.getElementById("league")
 const tallyGrid = document.getElementById("tally-grid")
 const questionArea = document.getElementById("question-grid-area");
 const footerArea = document.getElementById("footer-area");
+const scrollingText = document.getElementById("scrolling-text")
 
 
 
@@ -441,10 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
     feedbackGifArea.style.display = "none";
     finalMessageArea.style.display = "none";
     getResultsButton.style.display = "none";
-    nextQuestionArea.style.display = "none";
-    document.body.style.backgroundImage = "url('../images/football-background.jpg')";
-    // document.body.style.backgroundColor = "black";
-    
+    nextQuestionArea.style.display = "none";    
     questionArea.style.display = "none";
     footerArea.style.display = "none";
 
@@ -458,8 +456,11 @@ function submitUsername() {
         userNameBox.style.display = "none";
         tallyGrid.style.display = "grid";
         rulesArea.style.display = "block";
-        questionArea.style.display = "block";
+        questionArea.style.display = "grid";
         footerArea.style.display = "block";
+        document.body.style.background = "none";
+        scrollingText.style.display = "none";
+
         runGame();
     
     } else {
