@@ -457,7 +457,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function submitUsername() {
     let userProvidedName = document.getElementById("input-username").value;
-    console.log(userProvidedName)
+    let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
+    console.log(userProvidedName);
+    console.log(userProvidedNameCap);
     if (document.getElementById("input-username").value !== "") {
         let userNameBox = document.getElementById("enter-username-box");
         userNameBox.style.display = "none";
@@ -468,7 +470,7 @@ function submitUsername() {
         document.body.style.background = "none";
         scrollingText.style.display = "none";
         let insertUserName = document.getElementById("user-provided-name");
-        insertUserName.textContent = userProvidedName;
+        insertUserName.textContent = userProvidedNameCap;
 
         runGame();
 
@@ -555,16 +557,18 @@ function calculateAnswer() {
     let correctAnswer = randomElement.correct;
     let selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
     let userProvidedName = document.getElementById("input-username").value;
+    let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
+
 
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     if (correctAnswer == selectedAnswer) {
         addScore();
         showGoalGif();
         questionOptionsArea.innerHTML =
-            `<h3 class="feedback miss-feedback">Well done, ${userProvidedName}, you scored! You chose the correct answer: ${randomElement.correct}.</h3>`;
+            `<h3 class="feedback miss-feedback">Well done, ${userProvidedNameCap}, you scored! You chose the correct answer: ${randomElement.correct}.</h3>`;
     } else {
         questionOptionsArea.innerHTML =
-            `<h3 class="feedback miss-feedback">Oh no, ${userProvidedName}, you missed! The correct answer is ${randomElement.correct}.</h3>`;
+            `<h3 class="feedback miss-feedback">Oh no, ${userProvidedNameCap}, you missed! The correct answer is ${randomElement.correct}.</h3>`;
         showMissGif();
     }
 }
@@ -625,6 +629,8 @@ function endGame() {
     scroll(0, 0);
     let score = parseInt(document.getElementById("score").innerText);
     let userProvidedName = document.getElementById("input-username").value;
+    let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
+
 
     feedbackGifArea.style.display = "none";
     document.getElementById("question-box").style.display = "none";
@@ -632,26 +638,20 @@ function endGame() {
     finalMessageArea.style.display = "block";
     scrollingText.style.display = "block";
     tallyGrid.style.display = "none";
+    scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>Full Time for ${userProvidedNameCap} v Quiz</p>`;
     if (score == 0) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} failed to score!</p>`;
         displayFinalMessage("poor", "Out of your 10 attempts to score, you weren't able to convert any and so have ", "points. You are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can do better?")
     } else if (score < 2) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} scored just ${score} point!</p>`;
         displayFinalMessage("poor", "Out of your 10 attempts to score, you only managed to convert ", "and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance?")
     } else if (score < 4) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} advanced to League 2!</p>`;
         displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 2. Why not play again to see if you can advance even further?")
     } else if (score < 6) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} advanced to League 1!</p>`;
         displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 1. Why not play again to see if you can advance even further?")
     } else if (score < 8) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} advanced to the Championship!</p>`;
         displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further")
     } else if (score < 10) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} advanced to the Premier League!</p>`;
         displayFinalMessage("good", "What a game! Out of your 10 attempts, you scored ", "times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?")
     } else if (score < 11) {
-        scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>FULL TIME: ${userProvidedName} makes it to the Champions League!</p>`;
         displayFinalMessage("good", "Wow - you scored on all ", " attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?")
     } else {
         displayFinalMessage("poor", "Game over due to suspected cheating. Your score can't be more than 10: ", "Try again!")
