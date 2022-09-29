@@ -103,6 +103,8 @@ Clipart Image for Favicon/Logo: <a href="https://www.kindpng.com/imgv/TJJiT_png-
 
 Gifs: <a href="https://giphy.com/" target="new" aria-label="Giphy website - opens in a new window">Giphy website</a>
 
+Background image on entry screen: <a href="https://www.pexels.com/photo/adidas-ball-game-grass-39362" target="new" aria-label="Pexels website - opens in a new window">Pexels website</a>
+
 Nunito font used throughout the site: <a href="https://fonts.google.com/" target="new" aria-label="Google Fonts website - opens in a new window">Google Fonts</a>
 
 Platform for inserting and creating a Favicon image: <a href="https://realfavicongenerator.net/" target="new" aria-label="Real Favicon Generator website - opens in a new window">Real Favicon Generator</a>
