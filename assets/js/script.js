@@ -426,7 +426,6 @@ const tallyGrid = document.getElementById("tally-grid");
 const questionArea = document.getElementById("question-grid-area");
 const footerArea = document.getElementById("footer-area");
 const scrollingText = document.getElementById("scroll-left");
-
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
 
@@ -460,9 +459,7 @@ function submitUsername() {
         scrollingText.style.display = "none";
         let insertUserName = document.getElementById("user-provided-name");
         insertUserName.textContent = userProvidedNameCap;
-
         runGame();
-
     } else {
         let errorMessage = document.getElementById("username-error-message");
         errorMessage.textContent = "Please provide a username before playing.";
@@ -501,7 +498,6 @@ function submitAnswer() {
  * Hide unneccessary elements
  */
 function runGame(e) {
-
     randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
@@ -545,8 +541,6 @@ function calculateAnswer() {
     let selectedAnswer = document.querySelector('input[name="q1"]:checked').value;
     let userProvidedName = document.getElementById("input-username").value;
     let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
-
-
     // https://stackoverflow.com/questions/15839169/how-to-get-value-of-selected-radio-button
     if (correctAnswer == selectedAnswer) {
         addScore();
@@ -568,11 +562,14 @@ function showRules() {
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     showRulesButton.style.display = "none";
 }
-/** Hide rules and show button*/
+
+/** Hide rules
+ *  show button*/
 function hideRules() {
     rulesArea.style.display = "none";
     showRulesButton.style.display = "block";
 }
+
 /**
  * add one to score
  */
@@ -650,9 +647,6 @@ function displayFinalMessage(class3, text1, text2) {
     finalMessageArea.innerHTML =
         `<p class="final-message ${class3}">${text1} ${score} ${text2}</p> <form><button id="play-again-button">Play Again</button></form>`;
 }
-
-
-
 
 /**
  * Reset score/attempts to 0 and league to grassroots
@@ -755,6 +749,8 @@ function showMissGif() {
     // embed code from giphy.com
     feedbackGifArea.innerHTML = `<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="${randomMissGif.giphySource}" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="${randomMissGif.giphyHref}">via GIPHY</a></p>`;
 }
+
+// Event Listeners
 
 let nextQuestionButton = document.getElementById("next-question");
 nextQuestionButton.addEventListener('click', () => {

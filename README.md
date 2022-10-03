@@ -14,8 +14,17 @@ The header makes it clear what the website is. It is 80% width to line up with t
 
 <img src="assets/images/football-logo-sized.png" alt="Words 'Football quiz' with footballs (i.e, soccer balls) as the 'o's in the word 'Football'">
 
+### Scrolling text
+The scrolling text is designed to bring to mind the scrolling information often found on Sports News Channels.
+<img src="assets/readme-images/scrolling-text.png" alt="screenshot of a still version of the scrolling text shown on a bright yellow box">
+
+### Username
+By providing a username before start of play, the user can see personalised messages throughout the game.
+<img src="assets/readme-images/username-screen.png" alt="screenshot of username form">
+
 ### Score tally
 A band across the top of the website shows the player how many answers they have had correct, how many attempts they've had (i.e., how many questions they have answered) and what their current league status is. This is optimised for mobile with the league dropping to the next line.
+
 #### Desktop view
 <img src="assets/readme-images/tally.png" alt="Tally in desktop view">
 
