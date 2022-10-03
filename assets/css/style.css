@@ -135,12 +135,20 @@ header>h1 {
 }
 
 @keyframes left-right-scroll {
-    0%   {left:100%; top:0px;}
-    100% {left:-25%; top:0px;}}
+    0% {
+        left: 100%;
+        top: 0px;
+    }
+
+    100% {
+        left: -30%;
+        top: 0px;
+    }
+}
 
 #scrolling-text p {
-        font-weight: 800;
-        font-size: 1.5rem;
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 
 /* Tally grid */
@@ -416,13 +424,21 @@ footer {
         -ms-grid-column: 1;
     }
 
-#scrolling-text {
-    animation-duration: 8s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    #scrolling-text {
+        animation-duration: 8s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
-@keyframes left-right-scroll {
-    0%   {left:100%; top:0px;}
-    100% {left:-100%; top:0px;}}
+    @keyframes left-right-scroll {
+        0% {
+            left: 100%;
+            top: 0px;
+        }
+
+        100% {
+            left: -100%;
+            top: 0px;
+        }
+    }
 }

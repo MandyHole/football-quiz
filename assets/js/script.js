@@ -425,25 +425,15 @@ const leagueArea = document.getElementById("league");
 const tallyGrid = document.getElementById("tally-grid");
 const questionArea = document.getElementById("question-grid-area");
 const footerArea = document.getElementById("footer-area");
-const scrollingText = document.getElementById("scrolling-text");
-
-
-
+const scrollingText = document.getElementById("scroll-left");
 
 //  https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
 var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestions.length)];
 
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
-    // runGame();
-    // showRulesButton.style.display = "none";
-    // tallyGrid.style.display = "none";
-    // rulesArea.style.display = "none";
-    // feedbackGifArea.style.display = "none";
-    // finalMessageArea.style.display = "none";
     getResultsButton.style.display = "none";
     nextQuestionArea.style.display = "none";
-    // questionArea.style.display = "none";
     footerArea.style.display = "none";
     let usernameForm = document.getElementById("enter-username");
     usernameForm.addEventListener("keydown", function (event) {
@@ -451,15 +441,14 @@ document.addEventListener("DOMContentLoaded", function () {
             submitUsername();
         }
     });
-
-
 });
-
+/** Activated once someone clicks Let's Play btn on username entry screen
+ * Starts game if name has been provided
+ * Prompts user with message on screen to provide a username if not
+ */
 function submitUsername() {
     let userProvidedName = document.getElementById("input-username").value;
     let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
-    console.log(userProvidedName);
-    console.log(userProvidedNameCap);
     if (document.getElementById("input-username").value !== "") {
         let userNameBox = document.getElementById("enter-username-box");
         userNameBox.style.display = "none";
@@ -476,10 +465,9 @@ function submitUsername() {
 
     } else {
         let errorMessage = document.getElementById("username-error-message");
-        errorMessage.textContent = "Please provide a username before playing."
+        errorMessage.textContent = "Please provide a username before playing.";
     }
 }
-
 
 /** Activated when user clicks submit
  * Calculate answer and league. Add 1 to attempts
@@ -543,7 +531,6 @@ function runGame(e) {
             submitAnswer();
         }
     });
-
 }
 
 /**
@@ -630,8 +617,6 @@ function endGame() {
     let score = parseInt(document.getElementById("score").innerText);
     let userProvidedName = document.getElementById("input-username").value;
     let userProvidedNameCap = userProvidedName.charAt(0).toUpperCase() + userProvidedName.slice(1);
-
-
     feedbackGifArea.style.display = "none";
     document.getElementById("question-box").style.display = "none";
     rulesArea.style.display = "none";
@@ -640,29 +625,30 @@ function endGame() {
     tallyGrid.style.display = "none";
     scrollingText.innerHTML = `<div class="scroll-left" id="scrolling-text"><p>Full Time for ${userProvidedNameCap} v Quiz</p>`;
     if (score == 0) {
-        displayFinalMessage("poor", "Out of your 10 attempts to score, you weren't able to convert any and so have ", "points. You are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can do better?")
+        displayFinalMessage("poor", "Out of your 10 attempts to score, you weren't able to convert any and so have ", "points. You are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can do better?");
     } else if (score < 2) {
-        displayFinalMessage("poor", "Out of your 10 attempts to score, you only managed to convert ", "and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance?")
+        displayFinalMessage("poor", "Out of your 10 attempts to score, you only managed to convert ", "and are still playing for Grassroots Football. It looks like you need a bit more practice! Why not play again to see if you can advance?");
     } else if (score < 4) {
-        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 2. Why not play again to see if you can advance even further?")
+        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 2. Why not play again to see if you can advance even further?");
     } else if (score < 6) {
-        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 1. Why not play again to see if you can advance even further?")
+        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 1. Why not play again to see if you can advance even further?");
     } else if (score < 8) {
-        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further")
+        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further");
     } else if (score < 10) {
-        displayFinalMessage("good", "What a game! Out of your 10 attempts, you scored ", "times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?")
+        displayFinalMessage("good", "What a game! Out of your 10 attempts, you scored ", "times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?");
     } else if (score < 11) {
-        displayFinalMessage("good", "Wow - you scored on all ", " attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?")
+        displayFinalMessage("good", "Wow - you scored on all ", " attempts! You know your football and deserve your place in the Champions League. Why not try again to see if you can maintain your title?");
     } else {
-        displayFinalMessage("poor", "Game over due to suspected cheating. Your score can't be more than 10: ", "Try again!")
+        displayFinalMessage("poor", "Game over due to suspected cheating. Your score can't be more than 10: ", "Try again!");
         throw `Too many goals: ${score}`;
     }
 }
 
+/**Gives final analysis at the end of game based on the user's performance */
 function displayFinalMessage(class3, text1, text2) {
     let score = parseInt(document.getElementById("score").innerText);
     finalMessageArea.innerHTML =
-        `<p class="final-message ${class3}">${text1} ${score} ${text2}</p> <form><button id="play-again-button">Play Again</button></form>`
+        `<p class="final-message ${class3}">${text1} ${score} ${text2}</p> <form><button id="play-again-button">Play Again</button></form>`;
 }
 
 
@@ -771,44 +757,22 @@ function showMissGif() {
 }
 
 let nextQuestionButton = document.getElementById("next-question");
-
 nextQuestionButton.addEventListener('click', () => {
     runGame();
-    // handleSubmit();
     hideRules();
 });
-// nextQuestionButton.addEventListener('click', runGame);
-// nextQuestionButton.addEventListener('click', handleSubmit);
-// nextQuestionButton.addEventListener('click', hideRules);
 
-let qform = document.getElementById('next-question-button')
-qform.addEventListener("keydown", function (event) {
+let nextQuestionBtn = document.getElementById('next-question-button');
+nextQuestionBtn.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         runGame();
-        // handleSubmit();
-        hideRules()
+        hideRules();
     }
 });
 
-
-
-
-
-
 showRulesButton.addEventListener('click', showRules);
-
-getResultsButton.addEventListener('click', () => {
-    endGame();
-    // handleSubmit();    
-});
-// getResultsButton.addEventListener('click', endGame);
-// getResultsButton.addEventListener('click', handleSubmit);
-
+getResultsButton.addEventListener('click', endGame);
 let playAgainButton = document.getElementById("play-again-button");
 playAgainButton.addEventListener('click', playAgain);
-
-
 let submitUsernameButton = document.getElementById("submit-username");
 submitUsernameButton.addEventListener('click', submitUsername);
-
-// handleSubmit();
