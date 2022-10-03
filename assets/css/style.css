@@ -441,4 +441,6 @@ footer {
             top: 0px;
         }
     }
+    #final-message {
+        font-size: 1.25rem;}
 }

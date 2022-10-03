@@ -633,7 +633,7 @@ function endGame() {
     } else if (score < 6) {
         displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to League 1. Why not play again to see if you can advance even further?");
     } else if (score < 8) {
-        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further");
+        displayFinalMessage("medium", "Out of your 10 attempts to score, you managed to convert ", ". Well done on advancing up to the Championship. You're so close to playing in the Premier League - why not play again to see if you can advance even further?");
     } else if (score < 10) {
         displayFinalMessage("good", "What a game! Out of your 10 attempts, you scored ", "times and have advanced all the way up to the Premier League! You are so close to the Champions League. Why not try again to see if you can make it to the very top?");
     } else if (score < 11) {
