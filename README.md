@@ -134,3 +134,5 @@ Random number from Array: <a href="https://stackoverflow.com/questions/4550505/g
 Increase size of radio buttons: <a href="https://stackoverflow.com/questions/4920281/how-to-change-the-size-of-the-radio-button-using-css" target="new" aria-label="Stack Overflow website - opens in a new window">Stack Overflow</a>
 
 Check for vendor prefixes: <a href="https://autoprefixer.github.io/" target="new" aria-label="Autoprefixer CSS online  website - opens in a new window">Autoprefixer CSS online</a>
+
+Scrolling text: <a href="https://www.w3schools.com/css/css3_animations.asp" target="new" aria-label="Scrolling Text info - opens in a new window">W3 Schools</a>

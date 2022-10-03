@@ -436,14 +436,14 @@ var randomElement = footballQuestions[Math.floor(Math.random() * footballQuestio
 /**Run the game once the DOM content is loaded */
 document.addEventListener("DOMContentLoaded", function () {
     // runGame();
-    showRulesButton.style.display = "none";
-    tallyGrid.style.display = "none";
-    rulesArea.style.display = "none";
-    feedbackGifArea.style.display = "none";
-    finalMessageArea.style.display = "none";
+    // showRulesButton.style.display = "none";
+    // tallyGrid.style.display = "none";
+    // rulesArea.style.display = "none";
+    // feedbackGifArea.style.display = "none";
+    // finalMessageArea.style.display = "none";
     getResultsButton.style.display = "none";
     nextQuestionArea.style.display = "none";
-    questionArea.style.display = "none";
+    // questionArea.style.display = "none";
     footerArea.style.display = "none";
     let usernameForm = document.getElementById("enter-username");
     usernameForm.addEventListener("keydown", function (event) {

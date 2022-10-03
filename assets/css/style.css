@@ -8,18 +8,27 @@
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;800&display=swap');
 
+/* HTML tags */
 * {
     padding: 0;
     margin: 0;
     border: none;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     background-image: url(../images/football-background3.jpg);
     /* https://www.pexels.com/photo/adidas-ball-game-grass-39362/ */
+}
+
+h1,
+h2,
+p,
+li {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
 }
 
 button {
@@ -51,13 +60,6 @@ header>h1 {
     display: none;
 }
 
-h1,
-h2,
-p,
-li {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 300;
-}
 
 /* enter username opening screen */
 
@@ -78,7 +80,7 @@ li {
     border-radius: 25px;
 }
 
-#enter-username > input {
+#enter-username>input {
     background-color: lightgray;
     line-height: 2rem;
     width: 60%;
@@ -93,104 +95,66 @@ li {
     border-radius: 25px;
 }
 
-#enter-username > h2 {
+#enter-username>h2 {
     color: #1a5929;
     font-weight: 800;
     margin-bottom: 1rem;
 }
 
-#enter-username > button {
+#enter-username>button {
     margin: 1rem 0;
     width: auto;
     border-radius: 25px;
 }
 
 #username-error-message {
-    color:#B30000;
+    color: #B30000;
 }
 
 /* Scrolling text */
-/* https://www.html.am/html-codes/marquees/html-scrolling-text.cfm */
 
-.scroll-left {
-    height: 50px;	
+#scroll-left {
+    height: 50px;
     overflow: hidden;
-    position: relative;
     background: #EEFF00;
     color: #000;
     border: 1px solid #000;
-   }
+    width: 100%;
+}
 
-   .scroll-left p {
-    position: absolute;
-    font-weight: 800;
-    font-size: 1.5rem;
+#scrolling-text {
+    position: relative;
     width: 100%;
     height: 100%;
     margin: 0;
     line-height: 50px;
-    text-align: center;
- /* Starting position */
- -moz-transform:translateX(100%);
- -webkit-transform:translateX(100%);	
- transform:translateX(100%);
- /* Apply animation to this element */	
- -moz-animation: scroll-left 15s linear infinite;
- -webkit-animation: scroll-left 15s linear infinite;
- animation: scroll-left 15s linear infinite;
+    animation-name: left-right-scroll;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
-/* Move it (define the animation) */
-@-moz-keyframes scroll-left {
- 0%   { -moz-transform: translateX(100%); }
- 100% { -moz-transform: translateX(-100%); }
+
+@keyframes left-right-scroll {
+    0%   {left:100%; top:0px;}
+    100% {left:-25%; top:0px;}}
+
+#scrolling-text p {
+        font-weight: 800;
+        font-size: 1.5rem;
 }
-@-webkit-keyframes scroll-left {
- 0%   { -webkit-transform: translateX(100%); }
- 100% { -webkit-transform: translateX(-100%); }
-}
-@keyframes scroll-left {
- 0%   { 
- -moz-transform: translateX(100%); /* Browser bug fix */
- -webkit-transform: translateX(100%); /* Browser bug fix */
- transform: translateX(100%); 		
- }
- 100% { 
- -moz-transform: translateX(-100%); /* Browser bug fix */
- -webkit-transform: translateX(-100%); /* Browser bug fix */
- transform: translateX(-100%); 
- }
-
-
-/*     
-    /* Starting position */
-    transform:translateX(100%);
-    /* Apply animation to this element */
-    animation: scroll-left 15s linear infinite;
-   }
-
-   /* Move it (define the animation) */
-   @keyframes scroll-left {
-    0%   {
-    transform: translateX(100%); 		
-    }
-    100% {
-    transform: translateX(-100%); 
-    }
-   } */
 
 /* Tally grid */
 #tally-grid {
-    display: -ms-grid;
-    display: grid;
+    display: none;
     width: 100%;
     -ms-grid-columns: minmax(0, 1fr) 15px minmax(0, 1fr) 15px minmax(0, 1fr);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-        grid-template-areas:
+    grid-template-areas:
         "score-area attempts-area league-area";
     -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
     background-color: #1a5929;
 }
 
@@ -225,6 +189,7 @@ li {
     width: 100%;
     margin-top: 10px;
     position: relative;
+    display: none;
 }
 
 #rules>h2 {
@@ -233,9 +198,9 @@ li {
     text-align: center;
     padding: 1%;
     -webkit-margin-before: 0.2em;
-            margin-block-start: 0.2em;
+    margin-block-start: 0.2em;
     -webkit-margin-after: 0;
-            margin-block-end: 0;
+    margin-block-end: 0;
 }
 
 #rules>p {
@@ -244,9 +209,9 @@ li {
     text-align: center;
     padding: 0 10% 1% 10%;
     -webkit-margin-before: 0.4em;
-            margin-block-start: 0.4em;
+    margin-block-start: 0.4em;
     -webkit-margin-after: 0.4em;
-            margin-block-end: 0.4em;
+    margin-block-end: 0.4em;
 }
 
 /* Final message section */
@@ -257,6 +222,7 @@ li {
     width: 80%;
     margin: 0 auto;
     text-align: center;
+    display: none;
 }
 
 #final-message p {
@@ -277,24 +243,23 @@ li {
 
 /* Questions grid section */
 
-#question {
-    font-weight: 800;
-    font-size: 1.5rem;
-}
-
 #question-grid-area {
-    display: -ms-grid;
-    display: grid;
+    display: none;
     width: 80%;
     margin: 20px auto;
     -ms-grid-columns: minmax(0, 1fr) 15px minmax(0, 1fr) 15px minmax(0, 1fr);
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 15px;
-        grid-template-areas:
+    grid-template-areas:
         "question-box question-box feedback-gif";
     -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+
+#question {
+    font-weight: 800;
+    font-size: 1.5rem;
 }
 
 #question-box {
@@ -324,17 +289,23 @@ li {
 
 /* https://stackoverflow.com/questions/4920281/how-to-change-the-size-of-the-radio-button-using-css */
 input[type="radio"] {
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+    -ms-transform: scale(1.5);
+    /* IE 9 */
+    -webkit-transform: scale(1.5);
+    /* Chrome, Safari, Opera */
     transform: scale(1.5);
-  }
+}
+
+/* Question Feedback Gif */
 
 #feedback-gif {
     -ms-grid-row: 1;
     -ms-grid-column: 5;
     grid-area: feedback-gif;
+    display: none;
 }
-#feedback-gif > p {
+
+#feedback-gif>p {
     text-align: center;
 }
 
@@ -343,22 +314,10 @@ input[type="radio"] {
     display: block;
 }
 
-.feedback {
-    margin-top: 1rem;
-}
-
-.miss-feedback {
-    color: #B30000;
-    font-size: 1.5rem;
-}
-
-.correct-feedback {
-    color: #1a5929;
-    font-size: 1.5rem;
-}
-
+/* Button to make Rules area reappear */
 #show-rules {
     text-align: center;
+    display: none;
 }
 
 #show-rules button {
@@ -366,7 +325,6 @@ input[type="radio"] {
 }
 
 /* footer */
-
 footer {
     background-color: black;
     color: #fff;
@@ -377,11 +335,25 @@ footer {
     width: 100%;
 }
 
+/* End of Game Feedback */
+.feedback {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+}
+
+.miss-feedback {
+    color: #B30000;
+}
+
+.correct-feedback {
+    color: #1a5929;
+}
+
 /* media queries */
 @media screen and (max-width: 700px) {
     #tally-grid {
         -ms-grid-rows: auto 0 auto;
-            grid-template-areas:
+        grid-template-areas:
             "score-area attempts-area"
             "league-area league-area";
         -ms-grid-columns: minmax(0, 1fr) 0 minmax(0, 1fr);
@@ -391,7 +363,7 @@ footer {
 
     #question-grid-area {
         -ms-grid-rows: auto .5rem auto;
-            grid-template-areas:
+        grid-template-areas:
             "question-box"
             "feedback-gif";
         -ms-grid-columns: minmax(0, 1fr);
@@ -416,14 +388,17 @@ footer {
     #question-box li {
         font-size: 1.25rem;
     }
+
     #score-area {
         -ms-grid-row: 1;
         -ms-grid-column: 1;
     }
+
     #attempts-area {
         -ms-grid-row: 1;
         -ms-grid-column: 3;
     }
+
     #league-area {
         -ms-grid-row: 3;
         -ms-grid-column: 1;
@@ -440,4 +415,14 @@ footer {
         -ms-grid-row: 3;
         -ms-grid-column: 1;
     }
+
+#scrolling-text {
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes left-right-scroll {
+    0%   {left:100%; top:0px;}
+    100% {left:-100%; top:0px;}}
 }
